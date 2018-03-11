@@ -1,9 +1,14 @@
-node_modules
-app/public/bower_components/*
-app/public/fonts
-.tmp
-*.sublime-project
-*.sublime-workspace
-npm-debug.log
-.DS_Store
-.idea
+# Angular
+
+Angular/node_modules
+Angular/app/public/bower_components/*
+Angular/app/public/fonts
+Angular/.tmp
+Angular/*.sublime-project
+Angular/*.sublime-workspace
+Angular/npm-debug.log
+Angular/.DS_Store
+Angular/.idea
+
+
+# API server

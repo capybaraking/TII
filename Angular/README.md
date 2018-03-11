@@ -6,6 +6,8 @@ M1 SCA - 2017/2018
 
 Clélie Amiot, Morgane Colle, Corentin Lefebvre et Julie Simonin
 
-Il y a 2 parties :
-- API_server : la base de données et l'API pour y accéder
-- Angular : l'application Angular
+## Installation
+- `npm install`
+
+## Test
+- `npm run start`
