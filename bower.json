@@ -81,6 +81,9 @@
     },
     "angular-logex": {
       "main": "dist/log-ex-unobtrusive.js"
-    }
+    },
+    "angular-i18n": {
+      "main": "angular-locale_fr-fr.js"
+    },
   }
 }
