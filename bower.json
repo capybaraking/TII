@@ -84,6 +84,6 @@
     },
     "angular-i18n": {
       "main": "angular-locale_fr-fr.js"
-    },
+    }
   }
 }
