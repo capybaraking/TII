@@ -1,0 +1,86 @@
+{
+  "name": "yaak-angular-kickstarter",
+  "description": "Angular app kickstarter using bower and gulp",
+  "version": "0.2.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/public/bower_components"
+  ],
+  "keywords": [
+    "angular",
+    "angularjs",
+    "kickstarter",
+    "boilerplate",
+    "skeleton"
+  ],
+  "authors": [
+    {
+      "name": "Arthur Maroulier",
+      "email": "arthur.maroulier@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/ArthurMaroulier/yaak-angular-kickstarter",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ArthurMaroulier/yaak-angular-kickstarter.git"
+  },
+  "private": false,
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-animate": "^1.6.6",
+    "angular-cookies": "^1.6.6",
+    "angular-loading-bar": "^0.9.0",
+    "angular-logex": "^0.0.11",
+    "angular-momentjs": "^0.2.2",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3",
+    "lodash": "^4.8.2",
+    "angular-ui-router": "^1.0.6",
+    "angular-messages": "^1.6.6",
+    "font-awesome": "^4.7.0"
+  },
+  "overrides": {
+    "angular": {
+      "main": "angular.js"
+    },
+    "jquery": {
+      "main": "dist/jquery.js"
+    },
+    "angular-animate": {
+      "main": "angular-animate.js"
+    },
+    "angular-cookies": {
+      "main": "angular-cookies.js"
+    },
+    "font-awesome": {
+      "main": "css/font-awesome.css"
+    },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/css/bootstrap-theme.css",
+        "dist/js/bootstrap.js"
+      ]
+    },
+    "moment": {
+      "main": "min/moment-with-locales.js"
+    },
+    "angular-momentjs": {
+      "main": "angular-momentjs.js"
+    },
+    "lodash": {
+      "main": "dist/lodash.js"
+    },
+    "angular-loading-bar": {
+      "main": [
+        "build/loading-bar.js",
+        "build/loading-bar.css"
+      ]
+    },
+    "angular-logex": {
+      "main": "dist/log-ex-unobtrusive.js"
+    }
+  }
+}
