@@ -3,6 +3,7 @@
 Angular/node_modules
 Angular/app/public/bower_components/*
 Angular/app/public/fonts
+Angular/app/public/.tmp
 Angular/.tmp
 Angular/*.sublime-project
 Angular/*.sublime-workspace
