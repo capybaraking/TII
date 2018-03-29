@@ -1,6 +1,7 @@
 # Angular
 
 Angular/node_modules
+Angular/package-lock.json
 Angular/app/public/bower_components/*
 Angular/app/public/fonts
 Angular/app/public/.tmp
@@ -13,3 +14,5 @@ Angular/.idea
 
 
 # API server
+API/node_modules
+API/package-lock.json

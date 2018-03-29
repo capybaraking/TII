@@ -1,0 +1,29 @@
+{
+	"enigmes": [
+		{
+			"id": 1,
+			"question": "Je suis au début de la nuit et à la fin du matin, qui suis-je ?",
+			"reponse": "n",
+			"id_createur": 1,
+			"date": "2018-03-29T18:25:43.511Z"
+		}
+	],
+	"utilisateurs": [
+		{
+			"id": 1,
+			"pseudo": "Amo Vlelir",
+			"mail": "amo.vlelir@yahoo.fr",
+			"password": "azerty",
+			"score": 0
+		}
+	],
+	"resolutions": [
+		{
+			"id_utilisateur": 1,
+			"id_enigme": 1,
+			"nombre_essais": 1,
+			"dernier_essai": "2018-03-29T19:25:43.511Z",
+			"resolu": true
+		}
+	]
+}
