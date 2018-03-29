@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|Josefin+Sans|Muli|Open+Sans');
+
+  :root {
+    --main-color:#cd4b4b;
+}
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;	
+	
+	font-family : Muli;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  
+  .page-footer{
+	  background-color : var(--main-color);
+	  position: fixed;
+		bottom: 0;
+    width: 100%;
+  }
+  
+  nav{
+	  background-color : var(--main-color);
+  }
+  
+  .logo{
+	  margin-left : 20px;
+	  margin-top : 10px;
+	  height : 40px;
+  }
