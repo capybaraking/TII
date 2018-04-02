@@ -3,9 +3,9 @@
 
 angular
 	.module('app')
-	.controller('Login.IndexController', Controller);
+	.controller('loginController', Controller);
 
-function Controller($location, AuthenticationService) {
+function Controller($state, AuthenticationService) {
 	var vm = this;
 
 	vm.login = login;
@@ -21,7 +21,7 @@ function Controller($location, AuthenticationService) {
     	vm.loading = true;
     	AuthenticationService.Login(vm.username, vm.password, function (result) {
     		if (result === true) {
-    			$location.path('/');
+    			$state.go('home');
     		} else {
     			vm.error = 'Username or password is incorrect';
     			vm.loading = false;

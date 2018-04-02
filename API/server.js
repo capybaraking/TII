@@ -11,7 +11,7 @@ const userdb = JSON.parse(fs.readFileSync('./db.json', 'UTF-8'));
 
 server.use(middlewares);
 
-const SECRET_KEY = '123456789';
+const SECRET_KEY = 'MischiefManaged';
 const expiresIn = '1h';
 
 // Create a token from a payload 
@@ -29,9 +29,18 @@ function isAuthenticated({email, password}){
   return userdb.utilisateurs.findIndex(user => user.mail === email && user.password === password) !== -1
 }
 
+server.use( bodyParser.json() );       // to support JSON-encoded bodies
+server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
+
+
 // L'entrée pour se connecter
 server.post('/auth/login', (req, res) => {
-  const {email, password} = req.body
+  //const {email, password} = req.body
+  const email= req.body.email;
+  const password = req.body.password
   if (isAuthenticated({email, password}) === false) {
     const status = 401
     const message = 'Incorrect email or password'
@@ -43,7 +52,7 @@ server.post('/auth/login', (req, res) => {
 });
 
 //On vérifie qu'on est bien connecté pour toutes les entrées /auth/* (du coup faudra modifier)
-server.use("*",  (req, res, next) => {
+/*server.use("*",  (req, res, next) => {
   if (req.headers.authorization === undefined || req.headers.authorization.split(' ')[0] !== 'Bearer') {
     const status = 401
     const message = 'Bad authorization header'
@@ -58,7 +67,7 @@ server.use("*",  (req, res, next) => {
     const message = 'Error: access_token is not valid'
     res.status(status).json({status, message})
   }
-});
+});*/
 
 
 // On ajoute les trucs de l'API par défaut

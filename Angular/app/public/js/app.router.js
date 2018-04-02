@@ -17,6 +17,13 @@ angular.module('app')
                 url: '/dummy',
                 templateUrl: 'dummy/dummy.html',
                 controller: 'dummyController'
+            })
+            .state({
+                name: 'login',
+                url: '/login',
+                templateUrl: 'login/login.html',
+                controller: 'loginController',
+                controllerAs: 'vm'
             });
 
         $urlRouterProvider.otherwise('/');

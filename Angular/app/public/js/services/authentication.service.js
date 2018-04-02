@@ -4,21 +4,28 @@ angular
     .module('app')
     .factory('AuthenticationService', Service);
 
-function Service($http, $localStorage) {
+function Service($http, $localStorage, jwtHelper) {
     var service = {};
 
     service.Login = Login;
     service.Logout = Logout;
+    service.isConnected = function(){
+        if($localStorage.currentUser){
+            return !jwtHelper.isTokenExpired($localStorage.currentUser.token);
+        }else{
+            return false;
+        }
+    }
 
     return service;
 
     function Login(username, password, callback) {
-        $http.post('/api/authenticate', { username: username, password: password })
-        .success(function (response) {
+        $http.post('http://localhost:3000/auth/login', {email: username, password: password})
+        .then(function success(response) {
             // login successful if there's a token in the response
-            if (response.token) {
+            if (response.data.access_token) {
                 // store username and token in local storage to keep user logged in between page refreshes
-                $localStorage.currentUser = { username: username, token: response.token };
+                $localStorage.currentUser = { username: username, token: response.data.access_token };
 
                 // add jwt token to auth header for all requests made by the $http service
                 $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
@@ -29,6 +36,9 @@ function Service($http, $localStorage) {
                 // execute callback with false to indicate failed login
                 callback(false);
             }
+        },
+        function error(response){
+            callback(false)
         });
     }
 

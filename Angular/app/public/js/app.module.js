@@ -6,6 +6,8 @@ angular.module('app', [
     'ngAnimate',
     'log.ex.uo',
     'ngMessages',
+    'ngStorage',
+    'angular-jwt',
     'angular-loading-bar',
 
     'home',
@@ -31,8 +33,8 @@ angular.module('app', [
     })
 
     .config(function ($httpProvider, DEBUG) {
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
         if (DEBUG) {
             $httpProvider.interceptors.push('httpLoggerInterceptor');
         }
     });
-

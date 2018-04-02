@@ -15,6 +15,13 @@
 			"mail": "amo.vlelir@yahoo.fr",
 			"password": "azerty",
 			"score": 0
+		},
+		{
+			"id": 2,
+			"pseudo": "test",
+			"mail": "test",
+			"password": "test",
+			"score": 0
 		}
 	],
 	"resolutions": [

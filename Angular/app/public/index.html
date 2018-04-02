@@ -1,11 +1,16 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app" ng-cloak>
 <head>
 	<meta charset="utf-8">
 	<title>Enig'match</title>
 	<link rel="icon" href="favicon.ico" />
 	<!--link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"-->
 
+	<style>
+		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+			display: none !important;
+		}
+	</style>
 
 	<!-- styles -->
 	<!-- build:css ./css/vendor.min.css -->
@@ -29,16 +34,16 @@
 	<!-- Je ne sais pas pourquoi en le mettant au dessus ça ne marche pas alors je le mets là -->
 	<link rel="stylesheet" href="bower_components/material-icons/iconfont/material-icons.css">
 </head>
-<body>
+<body ng-controller="ApplicationController">
 	
 	<div class="navbar-fixed">
 		<nav>
 			<div class="nav-wrapper">
 				<a href="#" ><img class="logo" src="images/enigmatch_invcol_logo.png"/></a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="sass.html"><i class="material-icons left">explore</i>Parcourir les énigmes</a></li>
-					<li><a href="sass.html"><i class="material-icons left">person_outline</i>Profil</a></li>
-					<li><a href="sass.html"><i class="material-icons left">close</i>Déconnexion</a></li>
+					<li><a ui-sref="home"><i class="material-icons left">explore</i>Parcourir les énigmes</a></li>
+					<li><a ui-sref="home"><i class="material-icons left">person_outline</i>Profil</a></li>
+					<li><a ng-click="logout()"><i class="material-icons left">close</i>Déconnexion</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -46,41 +51,9 @@
 	
 	
 	<main>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
+		<div class="container">
+			<div ui-view></div>
+		</div>
 	</main>
 
 
@@ -114,20 +87,23 @@
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="bower_components/angular-messages/angular-messages.js"></script>
 	<script src="bower_components/materialize/dist/js/materialize.js"></script>
+	<script src="bower_components/ngstorage/ngStorage.js"></script>
+	<script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:js ./js/app.min.js -->
 	<!-- inject:js -->
 	<script src="js/app.module.js"></script>
-	<script src="js/dummy/dummy.module.js"></script>
 	<script src="js/home/home.module.js"></script>
+	<script src="js/dummy/dummy.module.js"></script>
 	<script src="js/app.constant.js"></script>
+	<script src="js/app.controller.js"></script>
 	<script src="js/app.router.js"></script>
 	<script src="js/app.service.js"></script>
-	<script src="js/dummy/dummy.controller.js"></script>
 	<script src="js/home/home.controller.js"></script>
 	<script src="js/login/login.controller.js"></script>
 	<script src="js/services/authentication.service.js"></script>
+	<script src="js/dummy/dummy.controller.js"></script>
 	<!-- endinject -->
 	<!-- endbuild -->
 	<!-- build:js ./js/templates.min.js -->
