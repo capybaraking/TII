@@ -1,70 +1,5 @@
-<!doctype html>
-<html lang="fr" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app" ng-cloak>
-<head>
-	<meta charset="utf-8">
-	<title>Enig'match</title>
-	<link rel="icon" href="favicon.ico" />
-	<!--link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"-->
 
-	<style>
-		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-			display: none !important;
-		}
-	</style>
-
-	<!-- styles -->
-	<!-- build:css ./css/vendor.min.css -->
-	<!-- bower:css -->
-	<link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" />
-	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-	<link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css" />
-	<!-- endbower -->
-	<!-- endbuild -->
-	<!-- build:css ./css/app.min.css -->
-	<!-- inject:css -->
-	<link rel="stylesheet" href=".tmp/css/old_styles.dev.css"/>
-	<link rel="stylesheet" href=".tmp/css/style.dev.css"/>
-	<link rel="stylesheet" href=".tmp/css/styles.dev.css"/>
-	<link rel="stylesheet" href=".tmp/css/test.dev.css"/>
-	<!-- endinject -->
-	<!-- endbuild -->
-
-	<!-- Je ne sais pas pourquoi en le mettant au dessus ça ne marche pas alors je le mets là -->
-	<link rel="stylesheet" href="bower_components/material-icons/iconfont/material-icons.css">
-	
-	<link rel="stylesheet" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
-</head>
-<body ng-controller="ApplicationController">
-	
-	<!-- Barre de navigation -->
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" ><img class="logo" src="img/enigmatch_invcol_logo.png"/></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#"><i class="material-icons left">explore</i>Parcourir les énigmes</a></li>
-          <li class="red darken-4"><a href="#">Inscription</a></li>
-          <li><a href="#">Connexion</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="#"><i class="material-icons left">explore</i>Parcourir les énigmes</a></li>
-    <li><a href="#">Inscription</a></li>
-    <li><a href="#">Connexion</a></li>
-  </ul>
-
-
-  <!-- Corps de la page -->
-  <main class="container">
-
-   <div class="row">
+  <div class="row">
 
 
     <div class="section">
@@ -236,19 +171,6 @@
   </div>
 
 
-
-</main>
-
-<footer class="page-footer">
-  <div class="container">
-    © 2014 Copyright Text
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-  </div>
-</footer>
-
-
-
-
 <script>
 
  $(document).ready(function() {
@@ -257,51 +179,3 @@
 });
 
 </script>
-
-
-
-
-	<!-- scripts -->
-	<!-- build:js ./js/vendor.min.js -->
-	<!-- bower:js -->
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-animate/angular-animate.js"></script>
-	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-	<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
-	<script src="bower_components/angular-logex/dist/log-ex-unobtrusive.js"></script>
-	<script src="bower_components/moment/min/moment-with-locales.js"></script>
-	<script src="bower_components/angular-momentjs/angular-momentjs.js"></script>
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="bower_components/lodash/dist/lodash.js"></script>
-	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-	<script src="bower_components/angular-messages/angular-messages.js"></script>
-	<script src="bower_components/materialize/dist/js/materialize.js"></script>
-	<script src="bower_components/ngstorage/ngStorage.js"></script>
-	<script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
-	<!-- endbower -->
-	<!-- endbuild -->
-	<!-- build:js ./js/app.min.js -->
-	<!-- inject:js -->
-	<script src="js/app.module.js"></script>
-	<script src="js/dummy/dummy.module.js"></script>
-	<script src="js/home/home.module.js"></script>
-	<script src="js/app.constant.js"></script>
-	<script src="js/app.controller.js"></script>
-	<script src="js/app.router.js"></script>
-	<script src="js/app.service.js"></script>
-	<script src="js/dummy/dummy.controller.js"></script>
-	<script src="js/home/home.controller.js"></script>
-	<script src="js/login/login.controller.js"></script>
-	<script src="js/profil/profil.controller.js"></script>
-	<script src="js/services/authentication.service.js"></script>
-	<!-- endinject -->
-	<!-- endbuild -->
-	<!-- build:js ./js/templates.min.js -->
-	<!-- inject:partials -->
-	<script src=".tmp/partials/templates.js"></script>
-	<!-- endinject -->
-	<!-- endbuild -->
-
-</body>
-</html>

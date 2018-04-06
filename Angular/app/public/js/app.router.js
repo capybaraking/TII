@@ -13,6 +13,12 @@ angular.module('app')
                 controller: 'homeController'
             })
             .state({
+                name: "home2",
+                url: "/home2",
+                templateUrl:'home/home2.html',
+                controller: 'homeController'
+            })
+            .state({
                 name: 'dummy',
                 url: '/dummy',
                 templateUrl: 'dummy/dummy.html',
