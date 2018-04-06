@@ -42,7 +42,7 @@
 				<a href="#" ><img class="logo" src="images/enigmatch_invcol_logo.png"/></a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a ui-sref="home"><i class="material-icons left">explore</i>Parcourir les énigmes</a></li>
-					<li><a ui-sref="home"><i class="material-icons left">person_outline</i>Profil</a></li>
+					<li><a ui-sref="profil"><i class="material-icons left">person_outline</i>Profil</a></li>
 					<li><a ng-click="logout()"><i class="material-icons left">close</i>Déconnexion</a></li>
 				</ul>
 			</div>
@@ -94,16 +94,17 @@
 	<!-- build:js ./js/app.min.js -->
 	<!-- inject:js -->
 	<script src="js/app.module.js"></script>
-	<script src="js/home/home.module.js"></script>
 	<script src="js/dummy/dummy.module.js"></script>
+	<script src="js/home/home.module.js"></script>
 	<script src="js/app.constant.js"></script>
 	<script src="js/app.controller.js"></script>
 	<script src="js/app.router.js"></script>
 	<script src="js/app.service.js"></script>
-	<script src="js/home/home.controller.js"></script>
-	<script src="js/login/login.controller.js"></script>
-	<script src="js/services/authentication.service.js"></script>
 	<script src="js/dummy/dummy.controller.js"></script>
+	<script src="js/login/login.controller.js"></script>
+	<script src="js/profil/profil.controller.js"></script>
+	<script src="js/services/authentication.service.js"></script>
+	<script src="js/home/home.controller.js"></script>
 	<!-- endinject -->
 	<!-- endbuild -->
 	<!-- build:js ./js/templates.min.js -->

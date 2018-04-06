@@ -24,6 +24,12 @@ angular.module('app')
                 templateUrl: 'login/login.html',
                 controller: 'loginController',
                 controllerAs: 'vm'
+            })
+            .state({
+                name: 'profil',
+                url: '/profil',
+                templateUrl: 'profil/profil.html',
+                controller: 'profilController'
             });
 
         $urlRouterProvider.otherwise('/');
