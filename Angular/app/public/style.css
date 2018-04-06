@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|Josefin+Sans|Muli|Open+Sans');
+
+  :root {
+    --main-color:#cd4b4b;
+}
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;	
+	
+	font-family : Muli;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .container{
+    width:80%;
+  }
+  
+  .btn-floating{
+	  position : fixed;
+	  right : 50px;
+	  bottom : 70px;
+    background-color:  : var(--main-color);
+  }
+  
+  .page-footer{
+	  background-color : var(--main-color);
+	  position: relative;
+		bottom: 0;
+    width: 100%;
+	padding-bottom : 15px;
+  }
+  
+  nav{
+	  background-color : var(--main-color);
+  }
+  
+  .logo{
+	  margin-left : 20px;
+	  margin-top : 10px;
+	  height : 40px;
+  }
+  
+  #profile_content{
+	  border : 2px solid green;
+	  height : 100%;
+	  position : relative;
+  }
+  
+  #profile_sidenav{
+	  border: 2px solid hotpink;
+	  height:100%;
+	  position : fixed;
+  }
