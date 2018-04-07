@@ -1,5 +1,5 @@
 
-  <div class="row">
+  <div class="col s12 m12 l12">
 
 
     <div class="section">
@@ -7,139 +7,142 @@
     </div>
 	
 	<!-- Colonne 1 -->
-    <div class= "col s12 m6">
+    <div class= "row">
+      <div ng-repeat="e in listeEnigmes">
+        <carte-enigme auteur="e.auteur" question="e.question" tags="e.tags"></carte-enigme>
+      </div>
 	
 	
-      <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Répondre à l'énigme</a>
-          </div>
-        </div>
-        <div class="col m5 card-content">
-          <div class="chip">
-            <i class="close material-icons left">star</i>
-          </div>
-          <div class="chip">
-            <i class="close material-icons left">tag_faces</i>TheSphinx55
-          </div>
-        </div>
-      </div>
-	  
-	  
-      <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Répondre à l'énigme</a>
-          </div>
-        </div>
-        <div class="col m4 card-content">
-          <div class="chip">
-            <i class="close material-icons left">star</i>Tag
-          </div>
-        </div>
-      </div>
-    </div>
-
-	<!-- Colonne 2 -->
-    <div class= "col s12 m6">
-	
-      <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Répondre à l'énigme</a>
-          </div>
-        </div>
-        <div class="col m4 card-content">
-          <div class="chip">
-            <i class="close material-icons left">star</i>Tag
-          </div>
-        </div>
-      </div>
-	  
-	  
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="divider"></div>
-    <div class="section">
-      <p><i class="material-icons left">new_releases</i><h5>Nouvelles énigmes</h5></p>
-    </div>
-
-    <!-- Colonne 1 -->
-    <div class= "col s12 m6">
-	
-	
-      <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Répondre à l'énigme</a>
-          </div>
-        </div>
-        <div class="col m5 card-content">
-          <div class="chip">
-            <i class="close material-icons left">star</i>
-          </div>
-          <div class="chip">
-            <i class="close material-icons left">tag_faces</i>TheSphinx55
-          </div>
-        </div>
-      </div>
-	  
-	  
-      <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Répondre à l'énigme</a>
-          </div>
-        </div>
-        <div class="col m4 card-content">
-          <div class="chip">
-            <i class="close material-icons left">star</i>Tag
-          </div>
-        </div>
-      </div>
-    </div>
-
-	<!-- Colonne 2 -->
-    <div class= "col s12 m6">
-	
-      <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Répondre à l'énigme</a>
-          </div>
-        </div>
-        <div class="col m4 card-content">
-          <div class="chip">
-            <i class="close material-icons left">star</i>Tag
-          </div>
-        </div>
-      </div>
-	  
-	  
-    </div>
-
-  </div>
+     <!--  <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m5 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>
+         </div>
+         <div class="chip">
+           <i class="close material-icons left">tag_faces</i>TheSphinx55
+         </div>
+       </div>
+     </div>
+         
+         
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m4 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>Tag
+         </div>
+       </div>
+     </div>
+         </div>
+     
+       Colonne 2
+         <div class= "col s12 m6">
+       
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m4 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>Tag
+         </div>
+       </div>
+     </div>
+         
+         
+         </div>
+       </div>
+     
+       <div class="row">
+         <div class="divider"></div>
+         <div class="section">
+     <p><i class="material-icons left">new_releases</i><h5>Nouvelles énigmes</h5></p>
+         </div>
+     
+         Colonne 1
+         <div class= "col s12 m6">
+       
+       
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m5 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>
+         </div>
+         <div class="chip">
+           <i class="close material-icons left">tag_faces</i>TheSphinx55
+         </div>
+       </div>
+     </div>
+         
+         
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m4 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>Tag
+         </div>
+       </div>
+     </div>
+         </div>
+     
+       Colonne 2
+         <div class= "col s12 m6">
+       
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m4 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>Tag
+         </div>
+       </div>
+     </div>
+         
+         
+         </div>
+     
+       </div> -->
 
 
 

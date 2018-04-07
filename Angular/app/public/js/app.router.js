@@ -9,13 +9,7 @@ angular.module('app')
             .state({
                 name: 'home',
                 url: '/',
-                templateUrl: 'home/home.html',
-                controller: 'homeController'
-            })
-            .state({
-                name: "home2",
-                url: "/home2",
-                templateUrl:'home/home2.html',
+                templateUrl: 'home/home2.html',
                 controller: 'homeController'
             })
             .state({
