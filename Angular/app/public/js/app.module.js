@@ -3,6 +3,7 @@
 // Application module
 angular.module('app', [
     'ui.router',
+    'ui.materialize',
     'ngAnimate',
     'log.ex.uo',
     'ngMessages',
