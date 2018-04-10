@@ -20,7 +20,7 @@ angular
 				//On va tester qu'on a récupéré au moins une énigme
 				if(typeof reponse.data != "undefined" && reponse.data.length > 0){ //typeof c'est le instanceof de Java, response ça doit être un tableau
 					//Ca veut dire que le tableau a au moins un élément
-					maPromise.resolve(response.data); //On lui dit que c'est okaaaay et qu'elle doit manger le tableau.
+					maPromise.resolve(reponse.data); //On lui dit que c'est okaaaay et qu'elle doit manger le tableau.
 				} else {
 					maPromise.reject("Aucune énigme n'a été trouvée, sorry not sorry"); //Ca a pas marché, donc on l'exprime
 				}
@@ -31,6 +31,6 @@ angular
 				return maPromise.promise;
 			}); //On traite la requête selon si ça a marché ou pas
 
-
+//Faudra voir pour trier les résultats, ou je sais pas quoi.
 		}
 	}); 

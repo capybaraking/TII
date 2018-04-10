@@ -1,12 +1,24 @@
 'use strict';
 
 angular.module('home')
-    .controller('homeController', ['$scope', '$log', function appController ($scope, $log) {
+.controller('homeController', ['$scope', '$log', 'enigmes', function appController ($scope, $log, enigmes) {//J'ai rajouté le nom du service des énigmes.
 
-        $scope.title = 'YAAK - Angular kickstarter';
-        $scope.subtitle = '(yet another)';
-        $scope.listeEnigmes = [
-            {
+    $scope.title = 'YAAK - Angular kickstarter';
+    $scope.subtitle = '(yet another)';
+    $scope.listeEnigmes = []; //On n'a pas encore parlé au service, donc c'est une liste vide.
+    //On appelle le service.
+    var maNewPromise = enigmes.list(); //La promise c'est pour pouvoir faire des try catch. Dans les services, vaut mieux en mettre.
+    //console.log(maNewPromise);
+    //QQC NE MARCHE PAS, IL FAUT REVOIR !!!!!!
+    console.log(enigmes);
+    maNewPromise.then(function(reponse){
+        $scope.listeEnigmes = reponse ;
+    }).catch(function(messageErreur){
+        console.log(messageErreur)
+    }) ; //La liste c'est une promise, donc on fait .then .catch : si la promise a été "résolvée" ou si ça a été un échec.
+    //Si pas promise résolue, on met la liste des énigmes dans le $scope, sinon on affiche le message d'erreur qui est récupéré dans la promise.
+ /*       [
+           {
                 question: "Je suis le plus beau chat du monde. Qui suis-je ?",
                 auteur: "Bibi",
                 tags: [
@@ -42,13 +54,13 @@ angular.module('home')
                     "Philosphie",
                     "Esprit"
                 ]
-            }];
-        $scope.components = [
+            }];*/
+            $scope.components = [
             'angularJS ' + angular.version.full,
             'font awesome',
             'bootstrap',
             '...'
-        ];
+            ];
 
         // Log-ex tests
         // Init log-ex prefix
