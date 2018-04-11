@@ -2,7 +2,7 @@
 
 angular.module('home')
 .controller('homeController', ['$scope', '$log', 'enigmes', function appController ($scope, $log, enigmes) {//J'ai rajouté le nom du service des énigmes.
-
+    $log = $log.getInstance('homeController');
     $scope.title = 'YAAK - Angular kickstarter';
     $scope.subtitle = '(yet another)';
     $scope.listeEnigmes = []; //On n'a pas encore parlé au service, donc c'est une liste vide.
@@ -14,7 +14,7 @@ angular.module('home')
     maNewPromise.then(function(reponse){
         $scope.listeEnigmes = reponse ;
     }).catch(function(messageErreur){
-        console.log(messageErreur)
+        $log.error(messageErreur);
     }) ; //La liste c'est une promise, donc on fait .then .catch : si la promise a été "résolvée" ou si ça a été un échec.
     //Si pas promise résolue, on met la liste des énigmes dans le $scope, sinon on affiche le message d'erreur qui est récupéré dans la promise.
  /*       [
@@ -64,11 +64,6 @@ angular.module('home')
 
         // Log-ex tests
         // Init log-ex prefix
-        $log = $log.getInstance('homeController');
 
-        $log.log("Check These cool logs (log)");
-        $log.warn("Check These cool logs (warn)");
-        $log.info("Check These cool logs (info)");
-        $log.error("Check These cool logs (error)");
-        $log.debug("Check These cool logs (debug)");
+
     }]);

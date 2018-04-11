@@ -11,7 +11,7 @@ angular
 			//à récupérer la liste des énigmes ou pas.
 			var maPromise = $q.defer(); //On crée une promise
 			//C'est l'heure d'aller parler à l'API pour récupérer les trucs. On va se servir de $http
-			var requete = $http.get("http://localhost:3000/enigmes"); //Ca envoie une requête GET sur l'API qui doit retourner la liste de toutes les énigmes.
+			var requete = $http.get("http://localhost:3000/enigmes?_expand=utilisateur"); //Ca envoie une requête GET sur l'API qui doit retourner la liste de toutes les énigmes.
 			requete.then(function success(reponse){ //Sucess ça veut dire qu'il a réussi à récupérer qqc, mais si ça se trouve,
 				//c'est un tableau vide
 				//C'est l'ordre des paramètres qui est important : le premier succès, le 2 échec !
@@ -24,13 +24,11 @@ angular
 				} else {
 					maPromise.reject("Aucune énigme n'a été trouvée, sorry not sorry"); //Ca a pas marché, donc on l'exprime
 				}
-				return maPromise.promise ; //Chelou, c'est un objet qui contient la promise
 			},
 			function echec(reponse){//Donc là en cas d'échec
-				maPromise.reject("Problème de connexion au serveur : " + reponse.statusText);//On met le code d'erreur avec
-				return maPromise.promise;
+				maPromise.reject("Problème de connexion au serveur : " + reponse.status + " " +reponse.statusText);//On met le code d'erreur avec
 			}); //On traite la requête selon si ça a marché ou pas
-
+			return maPromise.promise ; //Chelou, c'est un objet qui contient la promise
 //Faudra voir pour trier les résultats, ou je sais pas quoi.
 		}
 	}); 

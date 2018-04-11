@@ -9,7 +9,7 @@
 	<!-- Colonne 1 -->
     <div class= "row">
       <div ng-repeat="e in listeEnigmes">
-        <carte-enigme auteur="e.auteur" question="e.question" tags="e.tags"></carte-enigme>
+        <carte-enigme auteur="e.utilisateur.pseudo" question="e.question"></carte-enigme>
       </div>
 	
 	

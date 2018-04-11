@@ -2,6 +2,7 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const jsonServer = require('json-server');
 const jwt = require('jsonwebtoken');
+const pwdHash = require('password-hash');
 
 const server = jsonServer.create();
 const router = jsonServer.router('./db.json');
@@ -26,7 +27,7 @@ function verifyToken(token){
 
 // Check if the user exists in database
 function isAuthenticated({email, password}){
-  return userdb.utilisateurs.findIndex(user => user.mail === email && user.password === password) !== -1
+  return userdb.utilisateurs.findIndex(user => user.mail === email && pwdHash.verify(password, user.password)) !== -1
 }
 
 server.use( bodyParser.json() );       // to support JSON-encoded bodies
@@ -34,13 +35,17 @@ server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
-
+/*server.get('/hash', (req, res) => {
+  const pwd = req.query.password;
+  const hashed = pwdHash.generate(pwd);
+  res.status(200).json({hashed});
+});*/
 
 // L'entrée pour se connecter
 server.post('/auth/login', (req, res) => {
   //const {email, password} = req.body
   const email= req.body.email;
-  const password = req.body.password
+  const password = req.body.password;
   if (isAuthenticated({email, password}) === false) {
     const status = 401
     const message = 'Incorrect email or password'
