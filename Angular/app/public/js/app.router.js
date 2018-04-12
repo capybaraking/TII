@@ -7,10 +7,10 @@ angular.module('app')
         // App routes
         $stateProvider
             .state({
-                name: 'home',
-                url: '/',
-                templateUrl: 'home/home2.html',
-                controller: 'homeController'
+                name: 'home', //Le nom de l'état pour pouvoir faire un lien vers lui avec ui-sref dans le html
+                url: '/', //l'url de la page
+                templateUrl: 'home/home2.html', //le fichier html qui doit être mis dans ui-view
+                controller: 'homeController' //le controller qui doit être utilisé
             })
             .state({
                 name: 'dummy',
