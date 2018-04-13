@@ -25,42 +25,54 @@ angular.module('app')
                 controller: 'loginController',
                 controllerAs: 'vm'
             })
-            .state({
+            /*
+            Pour le profil on crée des sous-états et des sous-vues. Comme ça le menu à gauche est toujours affiché et pas actualisé, 
+            seulement le contenu de la page. 
+             */
+            .state({ //Là c'est le "cadre" d'une page du profil : juste le menu à gauche.
                 name: 'profil',
                 url: '/profil',
                 templateUrl: 'profil/profil.html',
-                controller: 'profilController'
+                controller: 'profilController',
+                redirectTo: 'profil.informations' //sous-état par défaut (la page informations)
             })
-            .state({
-                name: 'user-enigma',
-                url: '/profil_mesEnigmes',
-                templateUrl: 'profil/profil_UserEnigma.html',
-                controller: 'profilController'
-            })
-            .state({
-                name: 'resolved-enigma',
-                url: '/profil_resolues',
-                templateUrl: 'profil/profil_UserResolved.html',
-                controller: 'profilController'
-            })
-            .state({
-                name: 'not-resolved-enigma',
-                url: '/profil_nonResolues',
-                templateUrl: 'profil/profil_UserNotResolved.html',
-                controller: 'profilController'
-            })
-            .state({
-                name: 'followed-enigma',
-                url: '/profil_suivies',
-                templateUrl: 'profil/profil_UserFollowedEnigma.html',
-                controller: 'profilController'
-            })
-            .state({
-                name: 'achievements',
-                url: '/profil_achievements',
-                templateUrl: 'profil/profil_Achievements.html',
-                controller: 'profilController'
-            });
+                //Dans le profil.html, il y a une div ui-view qui est complétée grâce aux sous-états suivants.
+                .state({
+                    name: 'profil.informations', //le point signifie que c'est un sous état de profil
+                    url: '/informations', //Comme c'est un sous-état, l'url de la page est en fait /profil/informations
+                    templateUrl:'profil/profil.informations.html', //C'est le fichier qui remplit le ui-view de profil.html.
+                    controller: 'profilController'
+                })
+                .state({
+                    name: 'profil.enigma',
+                    url: '/mesEnigmes',
+                    templateUrl: 'profil/profil.enigma.html',
+                    controller: 'profilController'
+                })
+                .state({
+                    name: 'profil.resolues',
+                    url: '/resolues',
+                    templateUrl: 'profil/profil.resolues.html',
+                    controller: 'profilController'
+                })
+                .state({
+                    name: 'profil.non_resolues',
+                    url: '/nonResolues',
+                    templateUrl: 'profil/profil.non_resolues.html',
+                    controller: 'profilController'
+                })
+                .state({
+                    name: 'profil.suivies',
+                    url: '/suivies',
+                    templateUrl: 'profil/profil.suivies.html',
+                    controller: 'profilController'
+                })
+                .state({
+                    name: 'profil.achievements',
+                    url: '/achievements',
+                    templateUrl: 'profil/profil.achievements.html',
+                    controller: 'profilController'
+                });
         $urlRouterProvider.otherwise('/');
 
 
