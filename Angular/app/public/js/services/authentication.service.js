@@ -28,7 +28,7 @@ function Service($http, $localStorage, jwtHelper) {
                 $localStorage.currentUser = { username: username, token: response.data.access_token };
 
                 // add jwt token to auth header for all requests made by the $http service
-                $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
+                $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.access_token;
 
                 // execute callback with true to indicate successful login
                 callback(true);

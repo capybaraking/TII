@@ -36,14 +36,14 @@ angular
 
 
 		this.creation = function(question, antwort){ //C'est pour créer une nouvelle énigme.
-			var maPromise = $q.defer ;
+			var maPromise = $q.defer() ;
 			if (AuthenticationService.isConnected()){
 				var data = {question: question, reponse: antwort}; //La date et l'id_utilisateur seront faits sur le serveur
 				var requete = $http.post("http://localhost:3000/enigmes", data);
 				requete.then(function success(reponse){
 					maPromise.resolve(reponse.data);
 				}, function echec(reponse){
-					maPromise.reject("L'énigme n'a pas été ajoutée : "+ reponse.status);
+					maPromise.reject("L'énigme n'a pas été ajoutée : "+ reponse.status + reponse.statusText);
 				});
 			} else {
 				maPromise.reject("Vous n'êtes pas connecté.e");

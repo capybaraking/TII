@@ -57,18 +57,19 @@ server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 server.post("/enigmes", function(req, res, next){ 
 	req.body.date = Date.now(); //On ajoute la date actuelle dans le champ "date"
 	token = req.headers.authorization.split(' ')[1]; //On récupère le token d'autentification dans la requête
+
 	try { //On regarde si la personne est connectée. Si ce n'est pas le cas ça va faire une erreur
 		payload = jwt.verify(token, SECRET_KEY); //C'est ce qui est contenu dans le token : l'email et le mdp
 		email = payload.email;
 		password = payload.password;
 		//On cherche dans la bdd l'index de l'utilisateur qui a cet email et mdp
 		index = userdb.utilisateurs.findIndex(user => user.mail === email && pwdHash.verify(password, user.password));
-		if(idAuteur === -1){ //S'il vaut -1 c'est qu'on ne l'a pas trouvé : l'utilisateur n'existe pas.
+		if(index === -1){ //S'il vaut -1 c'est qu'on ne l'a pas trouvé : l'utilisateur n'existe pas.
 			const status = 401
 	    	const message = "Erreur : l'utilisateur n'existe pas";
 	    	res.status(status).json({status, message})
 		}else{ //Si on a trouvé une autre valeur, on récupère l'id et on l'ajoute à la requête.
-			idAuteur = userdb.utilisateurs[idAuteur].id;
+			idAuteur = userdb.utilisateurs[index].id;
 			req.body.utilisateurId = idAuteur;
 		}
 	} catch (err) { //Si le token n'avait pas la bonne forme, on retourne une erreur.
