@@ -35,6 +35,7 @@ angular.module('app', [
 
     .config(function ($httpProvider, DEBUG) {
         $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+        $httpProvider.interceptors.push('AuthInterceptor'); //Service pour ajouter le token d'identification dans les requêtes.
         if (DEBUG) {
             $httpProvider.interceptors.push('httpLoggerInterceptor');
         }
