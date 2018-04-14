@@ -55,10 +55,10 @@ server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 //    - next : une fonction qui permet de passer au middleware suivant.
 // On va donc modifier le req, puis ensuite on appelera next pour que ça fasse le travail normal
 server.post("/enigmes", function(req, res, next){ 
-	req.body.date = Date.now(); //On ajoute la date actuelle dans le champ "date"
-	token = req.headers.authorization.split(' ')[1]; //On récupère le token d'autentification dans la requête
+	req.body.date = new Date().toISOString(); //On ajoute la date actuelle dans le champ "date"
 
 	try { //On regarde si la personne est connectée. Si ce n'est pas le cas ça va faire une erreur
+    token = req.headers.authorization.split(' ')[1]; //On récupère le token d'autentification dans la requête
 		payload = jwt.verify(token, SECRET_KEY); //C'est ce qui est contenu dans le token : l'email et le mdp
 		email = payload.email;
 		password = payload.password;
@@ -66,17 +66,17 @@ server.post("/enigmes", function(req, res, next){
 		index = userdb.utilisateurs.findIndex(user => user.mail === email && pwdHash.verify(password, user.password));
 		if(index === -1){ //S'il vaut -1 c'est qu'on ne l'a pas trouvé : l'utilisateur n'existe pas.
 			const status = 401
-	    	const message = "Erreur : l'utilisateur n'existe pas";
-	    	res.status(status).json({status, message})
-		}else{ //Si on a trouvé une autre valeur, on récupère l'id et on l'ajoute à la requête.
+			const message = "Erreur : l'utilisateur n'existe pas";
+			res.status(status).json({status, message});
+		} else { //Si on a trouvé une autre valeur, on récupère l'id et on l'ajoute à la requête.
 			idAuteur = userdb.utilisateurs[index].id;
 			req.body.utilisateurId = idAuteur;
 		}
 	} catch (err) { //Si le token n'avait pas la bonne forme, on retourne une erreur.
-	    const status = 401
-	    const message = 'Error: access_token is not valid'
-	    res.status(status).json({status, message})
- 	}
+	const status = 401
+	const message = 'Error: access_token is not valid'
+	res.status(status).json({status, message})
+}
 	next(); //On a fini nos modifications, on passe à la suite
 });
 
