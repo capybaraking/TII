@@ -1,100 +1,141 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis|Josefin+Sans|Muli|Open+Sans');
 
-  :root {
-    --main-color:#cd4b4b;
+:root {
+	--main-color:#cd4b4b;
 }
-  
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;	
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;	
 	
 	font-family : Muli;
-  }
+}
 
-  main {
-    flex: 1 0 auto;
-  }
-  
-  .page-footer{
-	  background-color : var(--main-color);
-	  position: fixed;
-		bottom: 0;
-    width: 100%;
-  }
-  
-  nav{
-	  background-color : var(--main-color);
-  }
-  
-  .logo{
-	  margin-left : 20px;
-	  margin-top : 10px;
-	  height : 40px;
-  }
+main {
+	flex: 1 0 auto;
+}
 
-  /*******Profil*********/
+.page-footer{
+	background-color : var(--main-color);
+	/*position: fixed;*/
+	bottom: 0;
+	width: 100%;
+}
 
-  .sidenav {
-    width: 280px; /* Set the width of the sidebar */
-    height: 93%;
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: var(--main-color); 
-    overflow-x: hidden; /* Disable horizontal scroll */
+nav{
+	background-color : var(--main-color);
+}
+
+.logo{
+	margin-left : 20px;
+	margin-top : 10px;
+	height : 40px;
+}
+
+
+.multiline{
+	white-space: pre-line;
+}
+
+/*******Enigmes*********/
+
+/* Merci ce lien : https://codepen.io/mike-north/pen/MwVoYp */
+
+.cards-container {
+	column-break-inside: avoid;
+}
+.cards-container .enigme {
+	display: inline-block;
+	overflow: visible;
+	width:100%;
+}
+
+@media only screen and (max-width: 600px) {
+	.cards-container {
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
+}
+@media only screen and (min-width: 601px) {
+	.cards-container {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+}
+/* @media only screen and (min-width: 993px) {
+  .cards-container {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+} */
+
+
+/*******Profil*********/
+
+.sidenav {
+	width: 280px; /* Set the width of the sidebar */
+	height: 93%;
+	position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+	top: 0; /* Stay at the top */
+	left: 0;
+	background-color: var(--main-color); 
+	overflow-x: hidden; /* Disable horizontal scroll */
 }
 
 /* The navigation menu links */
 .sidenav a {
-    padding-left:25px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #FFFFFF;
-    display: block;
+	padding-left:25px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #FFFFFF;
+	display: block;
 }
 
 
 .sidenav a:hover {
-    color: var(--main-color);
-    background-color: #FFFFFF;
+	color: var(--main-color);
+	background-color: #FFFFFF;
 }
 
 /* Style page content */
 #main-profil {
-    margin-left: 50px;
-    padding: 0px 10px;
+	margin-left: 50px;
+	padding: 0px 10px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 800px) {
-    .sidenav {padding-top: 15px;padding-bottom: 50px;}
-    .sidenav a {font-size: 16px;}
+	.sidenav {padding-top: 15px;padding-bottom: 50px;}
+	.sidenav a {font-size: 16px;}
 }
 
 #user-profile{
-    height: 250px;
-    background: url("../../images/pattern.jpg");
-    background-size: cover;
+	height: 250px;
+	background: url("../../images/pattern.jpg");
+	background-size: cover;
 }
 
 
 .circle{
-  background-color:white;
-  height: 100px;
-  margin-top: -50px;
-  margin-left: 28%;
+	background-color:white;
+	height: 100px;
+	margin-top: -50px;
+	margin-left: 28%;
 }
 
 #name{
-  display: block;
-  text-shadow: 2px 0px 9px #777;
-  padding-top: 50%;
-  text-align: center;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 24px;
+	display: block;
+	text-shadow: 2px 0px 9px #777;
+	padding-top: 50%;
+	text-align: center;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 24px;
 }

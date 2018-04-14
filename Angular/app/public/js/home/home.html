@@ -8,8 +8,10 @@
 
 	<!-- Colonne 1 -->
 	<div class= "row">
-		<div ng-repeat="e in listeEnigmes">
-			<carte-enigme auteur="e.utilisateur.pseudo" question="e.question"></carte-enigme>
+		<div class="col s12 cards-container">
+			<div ng-repeat="e in listeEnigmes">
+				<carte-enigme auteur="e.utilisateur.pseudo" question="e.question"></carte-enigme>
+			</div>
 		</div>
 
 
@@ -166,7 +168,7 @@
        							<label for="enigme">Enoncé</label>
        						</div>
        						<div class="input-field col s6">
-       						<!-- Même chose ici, la réponse est liée à $scope.reponse -->
+       							<!-- Même chose ici, la réponse est liée à $scope.reponse -->
        							<input placeholder="N" id="first_name" type="text" class="validate" ng-model="reponse" required>
        							<label for="solution">Solution</label>
        						</div>
