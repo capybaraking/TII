@@ -1,57 +1,184 @@
-<div class="page-header">
-    <h1>{{title}} <small>{{subtitle}}</small></h1>
-</div>
 
-<div ng-if="isConnected()" class="alert alert-info">YOUPI ON EST CONNECTE !!!</div>
-
-<a ui-sref="login" class="btn btn-primary">Connexion</a>
-<div class="text-center">
-    <img src="images/angular.png" alt="">
-</div>
-
-<p class="lead">Including</p>
-<ul class="lead">
-    <li ng-repeat="component in components">{{component}}</li>
-</ul>
-
-<div class="well">If it's working, you must see a list just above, few words below and a font awesome icon right here <i class="fa fa-angellist fa-2x"></i></div>
-<div class="well">Open your browser console to see the great log-Ex log exemples.</div>
-<a ui-sref="dummy">> Show me dummy page</a>
+<div class="col s12 m12 l12">
 
 
+	<div class="section">
+		<p><i class="material-icons left">trending_up</i><h5>Énigmes tendances</h5></p>
+	</div>
 
-<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
-		<p>d</p>
+	<!-- Colonne 1 -->
+	<div class= "row">
+		<div ng-repeat="e in listeEnigmes">
+			<carte-enigme auteur="e.utilisateur.pseudo" question="e.question"></carte-enigme>
+		</div>
+
+
+     <!--  <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m5 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>
+         </div>
+         <div class="chip">
+           <i class="close material-icons left">tag_faces</i>TheSphinx55
+         </div>
+       </div>
+     </div>
+         
+         
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m4 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>Tag
+         </div>
+       </div>
+     </div>
+         </div>
+     
+       Colonne 2
+         <div class= "col s12 m6">
+       
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m4 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>Tag
+         </div>
+       </div>
+     </div>
+         
+         
+         </div>
+       </div>
+     
+       <div class="row">
+         <div class="divider"></div>
+         <div class="section">
+     <p><i class="material-icons left">new_releases</i><h5>Nouvelles énigmes</h5></p>
+         </div>
+     
+         Colonne 1
+         <div class= "col s12 m6">
+       
+       
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m5 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>
+         </div>
+         <div class="chip">
+           <i class="close material-icons left">tag_faces</i>TheSphinx55
+         </div>
+       </div>
+     </div>
+         
+         
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m4 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>Tag
+         </div>
+       </div>
+     </div>
+         </div>
+     
+       Colonne 2
+         <div class= "col s12 m6">
+       
+     <div class="card horizontal">
+       <div class="card-stacked">
+         <div class="card-content">
+           <p>Man—who crawls on all fours as a baby, then walks on two feet as an adult, and then uses a walking stick in old age.</p>
+         </div>
+         <div class="card-action">
+           <a href="#">Répondre à l'énigme</a>
+         </div>
+       </div>
+       <div class="col m4 card-content">
+         <div class="chip">
+           <i class="close material-icons left">star</i>Tag
+         </div>
+       </div>
+     </div>
+         
+         
+         </div>
+     
+     </div> -->
+
+     <div ng-controller="newEnigmaController"> <!-- On rajoute un controller pour gérer l'ajout d'énigmes -->
+
+     	<!-- Modal Trigger -->
+       <!-- Grâce à angular-materialize, on peut utiliser l'attribut open pour lier l'ouverture/fermeture du modal à une variable de $scope.
+       Comme ça on peut ouvrir ou fermer le modal depuis le contrôleur en changeant la valeur de $scope.open -->
+       <a data-target="modal1" class="btn-floating btn-large waves-effect waves-light red  modal-trigger" modal open="open" ng-click="openModal()"><i class="material-icons">add</i></a>
+
+       <!-- Modal Structure -->
+       <div id="modal1" class="modal">
+       	<!-- Quand on valide le formulaire, ça exécute la fonction submit() du contrôleur, qui s'occupe d'ajouter l'énigme à la bdd -->
+       	<form novalidate name="enigmeForm" ng-submit="enigmeForm.$valid && submit()"> 
+       		<div class="modal-content">
+       			<h4>Nouvelle énigme</h4>
+       			<div class="row">
+       				<div class="col s12">
+       					<div class="row">
+       						<div class="input-field col s12">
+       							<!-- Champ pour entrer l'énoncé. Il est lié à $scope.question (grâce à l'attribut ng-model): mettre à jour le contrôleur met à jour le contenu de ce champ et vice versa. Comme ça on peut récupérer facilement dans le contrôleur la valeur qui a été saisie ici. -->
+       							<textarea placeholder="Je viens au début de la nuit et à la fin du matin." id="textarea1" class="materialize-textarea" ng-model="question" required></textarea>
+       							<label for="enigme">Enoncé</label>
+       						</div>
+       						<div class="input-field col s6">
+       						<!-- Même chose ici, la réponse est liée à $scope.reponse -->
+       							<input placeholder="N" id="first_name" type="text" class="validate" ng-model="reponse" required>
+       							<label for="solution">Solution</label>
+       						</div>
+       					</div>
+       				</div>
+       			</div>
+       		</div>
+       		<div class="modal-footer">
+       			<!-- Le bouton est "désactivé" tant que le formulaire n'est pas valide (càd tous les champs ne sont pas remplis). -->
+       			<button type="submit" class="waves-effect waves-green btn {{enigmeForm.$invalid ? 'disabled' : ''}}"><i class="material-icons right" ng-disabled="enigmeForm.$invalid">create</i>Créer</button>
+       		</div>
+       	</form>
+       </div>
+
+   </div>

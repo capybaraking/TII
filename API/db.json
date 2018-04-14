@@ -13,6 +13,41 @@
       "date": "2018-04-14T11:16:12.591Z",
       "utilisateurId": 2,
       "id": 2
+    },
+    {
+      "question": "J'ai une gorge mais je ne peux pas parler, je coule mais ne me noie pas, j'ai un lit mais je ne dors jamais. Qui suis-je ?",
+      "reponse": "rivière",
+      "date": "2018-04-14T16:29:07.277Z",
+      "utilisateurId": 2,
+      "id": 3
+    },
+    {
+      "question": "Un jour, allant à Notre-Dame,\nJ'ai croisé l'homme aux sept femmes.\nChaque femme avait sept cabas,\nDans chaque panier étaient sept chats.\nChacun des chats avait sept puces ;\nPuces, chats, cabas, femmes,\nCombien allaient à Notre-Dame ?",
+      "reponse": "un",
+      "date": "2018-04-14T16:34:19.206Z",
+      "utilisateurId": 2,
+      "id": 4
+    },
+    {
+      "question": "1. Mieux que dieu\n2. Pire que le diable\n3. Les pauvres en ont\n4. Les riches en ont besoin\n5. Si on en mange, on meurt",
+      "reponse": "rien",
+      "date": "2018-04-14T16:35:28.845Z",
+      "utilisateurId": 2,
+      "id": 5
+    },
+    {
+      "question": "David a 10 ans, son petit frère Franck a la moitié de son âge.\nQuand David sera 10 fois plus âgé, quel âge aura Franck ?",
+      "reponse": "95",
+      "date": "2018-04-14T16:35:56.472Z",
+      "utilisateurId": 2,
+      "id": 6
+    },
+    {
+      "question": "Un grand-père, deux pères, deux fils et un petit-fils vont à la pêche. Ils attrapent chacuns un poisson. Combien ont-ils de poissons ?",
+      "reponse": "3",
+      "date": "2018-04-14T16:36:35.741Z",
+      "utilisateurId": 2,
+      "id": 7
     }
   ],
   "utilisateurs": [
