@@ -15,9 +15,12 @@ function Service($http, $localStorage, jwtHelper) {
         }else{
             return false;
         }
+
     }
 
+
     return service;
+
 
     function Login(username, password, callback) {
         $http.post('http://localhost:3000/auth/login', {email: username, password: password})
