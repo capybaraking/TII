@@ -10,6 +10,7 @@ angular.module('app', [
     'ngStorage',
     'angular-jwt',
     'angular-loading-bar',
+    'infinite-scroll',
 
     'home',
     'dummy'
