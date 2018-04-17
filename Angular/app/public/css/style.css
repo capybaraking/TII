@@ -140,6 +140,8 @@ nav{
 	font-size: 24px;
 }
 
+/****INDEX****/
+
 .chips {
   background: #e0e0e0;
   margin-left: 10px;
@@ -157,4 +159,10 @@ nav{
 	font-size: 12px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+/****INSCRIPTION***/
+
+#inscription{
+	margin-bottom: 100px;
 }

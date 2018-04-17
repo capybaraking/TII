@@ -40,6 +40,7 @@
                 <ul id="nav-mobile" class="right hide-on-small-and-down">
                     <li><a ui-sref="home"><i class="material-icons left">explore</i>Parcourir les énigmes</a></li>
                     <li ng-if="isConnected()"><a ui-sref="profil"><i class="material-icons left">person_outline</i>Profil</a></li>
+                    <li ng-if="!isConnected()"><a ui-sref="register">S'inscrire</a></li>
                     <li ng-if="!isConnected()"><a ui-sref="login">Connexion</a></li>
                     <li ng-if="isConnected()" ng-click="logout()"><a><i class="material-icons left">close</i>Déconnexion</a></li>
                 </ul>
@@ -100,16 +101,18 @@
 	<script src="js/app.filter.js"></script>
 	<script src="js/app.router.js"></script>
 	<script src="js/app.service.js"></script>
-	<script src="js/login/login.controller.js"></script>
 	<script src="js/dummy/dummy.controller.js"></script>
 	<script src="js/home/carte.directive.js"></script>
 	<script src="js/home/home.controller.js"></script>
 	<script src="js/home/new_enigma.controller.js"></script>
+	<script src="js/login/login.controller.js"></script>
 	<script src="js/profil/profil.controller.js"></script>
+	<script src="js/register/register.controller.js"></script>
 	<script src="js/services/authentication.service.js"></script>
 	<script src="js/services/authInterceptor.service.js"></script>
 	<script src="js/services/enigmes.service.js"></script>
 	<script src="js/services/PagesEnigmes.service.js"></script>
+	<script src="js/services/register.service.js"></script>
 	<!-- endinject -->
 	<!-- endbuild -->
 	<!-- build:js ./js/templates.min.js -->

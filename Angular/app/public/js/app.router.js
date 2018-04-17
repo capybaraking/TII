@@ -19,6 +19,12 @@ angular.module('app')
                 controller: 'dummyController'
             })
             .state({
+                name: 'register',
+                url: '/register',
+                templateUrl: 'register/register.html',
+                controller: 'registerController'
+            })
+            .state({
                 name: 'login',
                 url: '/login',
                 templateUrl: 'login/login.html',
