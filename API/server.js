@@ -55,7 +55,7 @@ server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 //    - next : une fonction qui permet de passer au middleware suivant.
 // On va donc modifier le req, puis ensuite on appelera next pour que ça fasse le travail normal
 server.post("/enigmes", function(req, res, next){ 
-	req.body.date = new Date().toISOString(); //On ajoute la date actuelle dans le champ "date"
+	req.body.date = Date.now(); //On ajoute la date actuelle dans le champ "date"
 
 	try { //On regarde si la personne est connectée. Si ce n'est pas le cas ça va faire une erreur
     token = req.headers.authorization.split(' ')[1]; //On récupère le token d'autentification dans la requête

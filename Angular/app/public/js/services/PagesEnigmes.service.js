@@ -14,6 +14,7 @@ angular
 		this.busy = false; //est-ce qu'on est en train de récupérer des énigmes ?
 		this.page = 1; //La dernière page récupérée
 		this.totalCount = null; //Le nombre max d'énigmes dans la BDD
+		this.error = false;
 	};
 
 	/**
@@ -25,8 +26,8 @@ angular
 		}
 		this.busy = true;
 
-		var url = "http://localhost:3000/enigmes?_page=" + this.page +"&_limit=" + limit;
-
+		var url = "http://localhost:3000/enigmes?_expand=utilisateur&_sort=date&_order=desc&_page=" + this.page +"&_limit=" + limit;
+		//On trie les énigmes par ordre décroissant de dates, les & c'est les paramètres du GET
 		$http.get(url).then(function success(response){
 			if(response.headers("X-Total-Count") != null){
 				this.totalCount = response.headers("X-Total-Count"); //JSON-server retourne le nombre total d'items dans le header X-Total-Count
@@ -44,8 +45,9 @@ angular
 
 			function error(err){
 				//Faudrait faire quelque chose là quand même...
+				this.error = true;
 				this.busy = false;
-			});
+			}.bind(this));
 	};
 
 	return PagesEnigmes;

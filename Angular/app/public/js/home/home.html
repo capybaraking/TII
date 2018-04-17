@@ -15,7 +15,7 @@ infinite-scroll indique la fonction qui doit être appelée quand on arrive en b
 infinite-scroll-disabled ça permet d'indiquer un booléen qui, quand il est vrai, désactive le chargement des énigmes au scroll : dans notre cas on arrête d'essayer de charger d'autres énigmes quand on en a déjà chargé le maximum, ou quand on est déjà en train d'en chercher sur le serveur (on ne déclenche pas 2 fois tant qu'on n'a pas récupéré les autres)
 
 infinite-scroll-distance c'est à quelle distance du bas on commence à en chagrger d'autres -->
-<div class= "row" infinite-scroll="enigmes.nextPage()" infinite-scroll-disabled="enigmes.busy || enigmes.items.length == enigmes.totalCount" infinite-scroll-distance="1">
+<div class= "row" infinite-scroll="enigmes.nextPage()" infinite-scroll-disabled="enigmes.busy || enigmes.items.length == enigmes.totalCount || enigmes.error" infinite-scroll-distance="1">
 	<div class="col s12 cards-container">
 		<div ng-repeat="e in enigmes.items">
 			<carte-enigme auteur="e.utilisateur.pseudo" question="e.question"></carte-enigme>
@@ -25,6 +25,7 @@ infinite-scroll-distance c'est à quelle distance du bas on commence à en chagr
 <p ng-if="enigmes.busy">
 Chargement...  
 </p>
+<p ng-if="enigmes.error">Echec de la connexion au serveur.</p>
 
 <div ng-controller="newEnigmaController"> <!-- On rajoute un controller pour gérer l'ajout d'énigmes -->
 
