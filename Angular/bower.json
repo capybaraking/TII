@@ -17,8 +17,8 @@
   ],
   "authors": [
     {
-      "name": "Arthur Maroulier",
-      "email": "arthur.maroulier@gmail.com"
+      "name": "Morgane Colle",
+      "email": "bibilalicorne@outlook.fr"
     }
   ],
   "homepage": "https://github.com/ArthurMaroulier/yaak-angular-kickstarter",
@@ -43,9 +43,13 @@
     "ngstorage": "^0.3.11",
     "angular-jwt": "^0.1.9",
     "angular-materialize": "^0.2.2",
-    "ngInfiniteScroll": "^1.3.4"
+    "ngInfiniteScroll": "^1.3.4",
+    "angular-i18n": "^1.6.10"
   },
   "overrides": {
+    "angular-id18n": {
+      "main": "angular-locale_fr-fr.js"
+    },
     "angular": {
       "main": "angular.js"
     },
