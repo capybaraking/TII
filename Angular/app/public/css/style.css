@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis|Josefin+Sans|Muli|Open+Sans');
+@font-face {
+    font-family: Muli;
+    src: url(/fonts/Muli/Muli-Regular.ttf);
+}
 
 :root {
 	--main-color:#cd4b4b;
@@ -157,4 +160,10 @@ nav{
 	font-size: 12px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+#newEnigma{
+	position : fixed;
+	bottom : 70px;
+	right : 50px;
 }
