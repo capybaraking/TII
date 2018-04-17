@@ -1,9 +1,15 @@
 <div class="enigme">
-	<div class="card horizontal">
-		<div class="card-stacked">
+	<div class="card vertical">
+		<div>
 			<div class="card-content">
-				<p class="multiline">{{question}}</p>
+				<p>{{question}}</p>
 			</div>
+			<div class="chips">
+				<i class="close material-icons left">tag_faces</i>{{auteur}}
+		    </div>
+		    <div class="date">
+				Posted on {{e.date | date}}
+		    </div>
 			<div class="card-action">
 				<a href="#">Répondre à l'énigme</a>
 			</div>
@@ -14,9 +20,7 @@
 		
 	</div>
 </div> -->
-			<div class="chip">
-				<i class="close material-icons left">tag_faces</i>{{auteur}}
-			</div>
+		
 		</div>
 	</div>
 </div>
