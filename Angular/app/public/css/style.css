@@ -139,3 +139,22 @@ nav{
 	margin-right: auto;
 	font-size: 24px;
 }
+
+.chips {
+  background: #e0e0e0;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  padding : 10px;
+  border-radius: 32px;
+  font-size: 12px;
+  max-width: 300px;
+  word-wrap: break-word;
+  line-height: 25px;
+}
+
+.date{
+	margin-left: 20px;
+	font-size: 12px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
