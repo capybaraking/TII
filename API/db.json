@@ -1,142 +1,218 @@
 {
-	"enigmes": [
-		{
-			"id": 1,
-			"question": "Je suis au début de la nuit et à la fin du matin, qui suis-je ?",
-			"reponse": "n",
-			"utilisateurId": 1,
-			"date": 1523957191090
-		},
-		{
-			"question": "Qui est le plus beau chat du monde ?",
-			"reponse": "Basilic",
-			"date": 1523957191090,
-			"utilisateurId": 2,
-			"id": 2
-		},
-		{
-			"question": "J'ai une gorge mais je ne peux pas parler, je coule mais ne me noie pas, j'ai un lit mais je ne dors jamais. Qui suis-je ?",
-			"reponse": "rivière",
-			"date": 1523957191090,
-			"utilisateurId": 2,
-			"id": 3
-		},
-		{
-			"question": "Un jour, allant à Notre-Dame,\nJ'ai croisé l'homme aux sept femmes.\nChaque femme avait sept cabas,\nDans chaque panier étaient sept chats.\nChacun des chats avait sept puces ;\nPuces, chats, cabas, femmes,\nCombien allaient à Notre-Dame ?",
-			"reponse": "un",
-			"date": 1523957255306,
-			"utilisateurId": 2,
-			"id": 4
-		},
-		{
-			"question": "1. Mieux que dieu\n2. Pire que le diable\n3. Les pauvres en ont\n4. Les riches en ont besoin\n5. Si on en mange, on meurt",
-			"reponse": "rien",
-			"date": 1523957255306,
-			"utilisateurId": 2,
-			"id": 5
-		},
-		{
-			"question": "David a 10 ans, son petit frère Franck a la moitié de son âge.\nQuand David sera 10 fois plus âgé, quel âge aura Franck ?",
-			"reponse": "95",
-			"date": 1523957255306,
-			"utilisateurId": 2,
-			"id": 6
-		},
-		{
-			"question": "Un grand-père, deux pères, deux fils et un petit-fils vont à la pêche. Ils attrapent chacuns un poisson. Combien ont-ils de poissons ?",
-			"reponse": "3",
-			"date": 1523957255306,
-			"utilisateurId": 2,
-			"id": 7
-		},
-		{
-			"question": "oizjefozeh",
-			"reponse": "kzoe",
-			"date": 1523957298102,
-			"utilisateurId": 2,
-			"id": 8
-		},
-		{
-			"question": "question 9",
-			"reponse": "oef",
-			"date": 1523957298102,
-			"utilisateurId": 1,
-			"id": 9
-		},
-		{
-			"question": "question10",
-			"reponse":"10",
-			"date": 1523957313336,
-			"utilisateurId":1,
-			"id":10
-		},
-		{
-			"question": "oizjefozeh",
-			"reponse": "kzoe",
-			"date": 1523957313336,
-			"utilisateurId": 2,
-			"id": 11
-		},
-		{
-			"question": "question 9",
-			"reponse": "oef",
-			"date": 1523957313336,
-			"utilisateurId": 1,
-			"id": 12
-		},
-		{
-			"question": "question10",
-			"reponse":"10",
-			"date": 1523957338672,
-			"utilisateurId":1,
-			"id":13
-		},
-		{
-			"question": "oizjefozeh",
-			"reponse": "kzoe",
-			"date": 1523957338672,
-			"utilisateurId": 2,
-			"id": 14
-		},
-		{
-			"question": "question 9",
-			"reponse": "oef",
-			"date": 1523957338672,
-			"utilisateurId": 1,
-			"id": 15
-		},
-		{
-			"question": "question10",
-			"reponse":"10",
-			"date": 1523957338672,
-			"utilisateurId":1,
-			"id":16
-		}
-	],
-	"utilisateurs": [
-		{
-			"id": 1,
-			"pseudo": "Amo Vlelir",
-			"mail": "amo.vlelir@yahoo.fr",
-			"password": "sha1$48b54ea1$1$ed2013f8bd37ae5f6ab75578c017fe8b7e083e45",
-			"score": 0
-		},
-		{
-			"id": 2,
-			"pseudo": "test",
-			"mail": "test",
-			"password": "sha1$739a68d1$1$427d9d9a0f0d878310ffeafc7182bbd036ec5f70",
-			"score": 0
-		}
-	],
-	"resolutions": [
-		{
-			"utilisateurId": 1,
-			"enigmeId": 1,
-			"nombre_essais": 1,
-			"dernier_essai": "2018-03-29T19:25:43.511Z",
-			"resolu": true
-		}
-	]
-
+  "enigmes": [
+    {
+      "id": 1,
+      "question": "Je suis au début de la nuit et à la fin du matin, qui suis-je ?",
+      "reponse": "n",
+      "utilisateurId": 1,
+      "date": 1523957191090
+    },
+    {
+      "question": "Qui est le plus beau chat du monde ?",
+      "reponse": "Basilic",
+      "date": 1523957191090,
+      "utilisateurId": 2,
+      "id": 2
+    },
+    {
+      "question": "J'ai une gorge mais je ne peux pas parler, je coule mais ne me noie pas, j'ai un lit mais je ne dors jamais. Qui suis-je ?",
+      "reponse": "rivière",
+      "date": 1523957191090,
+      "utilisateurId": 2,
+      "id": 3
+    },
+    {
+      "question": "Un jour, allant à Notre-Dame,\nJ'ai croisé l'homme aux sept femmes.\nChaque femme avait sept cabas,\nDans chaque panier étaient sept chats.\nChacun des chats avait sept puces ;\nPuces, chats, cabas, femmes,\nCombien allaient à Notre-Dame ?",
+      "reponse": "un",
+      "date": 1523957255306,
+      "utilisateurId": 2,
+      "id": 4
+    },
+    {
+      "question": "1. Mieux que dieu\n2. Pire que le diable\n3. Les pauvres en ont\n4. Les riches en ont besoin\n5. Si on en mange, on meurt",
+      "reponse": "rien",
+      "date": 1523957255306,
+      "utilisateurId": 2,
+      "id": 5
+    },
+    {
+      "question": "David a 10 ans, son petit frère Franck a la moitié de son âge.\nQuand David sera 10 fois plus âgé, quel âge aura Franck ?",
+      "reponse": "95",
+      "date": 1523957255306,
+      "utilisateurId": 2,
+      "id": 6
+    },
+    {
+      "question": "Un grand-père, deux pères, deux fils et un petit-fils vont à la pêche. Ils attrapent chacuns un poisson. Combien ont-ils de poissons ?",
+      "reponse": "3",
+      "date": 1523957255306,
+      "utilisateurId": 2,
+      "id": 7
+    },
+    {
+      "question": "Combien y a-t-il de nombres contenant le chiffre 7 entre 1 et 1000 ?",
+      "reponse": "271",
+      "date": 1523989413134,
+      "utilisateurId": 2,
+      "id": 8
+    },
+    {
+      "question": "Il y a 5 maisons dans la rue et chacune a une couleur différente.\nDans chaque maison habite une personne de chaque nationalité différente.\nChacune de ces personnes a une boisson, une marque de cigarette et un animal domestique préférés.\nAucune de ces personnes ne boit la même boisson, ne fume les mêmes cigarettes et n'a le même animal que son voisin.\nQuestion : à qui appartient le poisson ?\n\nIndices :\n1 l'Anglais habite la maison rouge\n2 le Suédois a un chien\n3 le Danois aime boire du thé\n4 la maison verte est immédiatement à gauche de la maison blanche\n5 le propriétaire de la maison verte boit du café\n6 la personne qui fume des Pall Mall a un oiseau\n7 l'homme qui habite dans la maison du milieu boit du lait\n8 la personne de la maison jaune fume des Dunhill\n9 le Norvégien habite dans la première maison\n10 le fumeur de Marlboro habite à côté de celui qui a le chat\n11 l'homme qui a un cheval habite à côté de celui qui fume des Dunhill\n12 le fumeur de Winfield boit de la bière\n13 le Norvégien habite à côté de la maison bleue\n14 l'Allemand fume des Rothmans\n15 le fumeur de Marlboro a un voisin qui boit de l'eau",
+      "reponse": "l'Allemand",
+      "date": 1523989492725,
+      "utilisateurId": 2,
+      "id": 9
+    },
+    {
+      "question": "5 chats sont capables d'attraper 5 souris en 5 minutes.\n\nSachant cela, combien de chats faut-il pour attraper 100 souris en 100 minutes ?",
+      "reponse": "5",
+      "date": 1523989673749,
+      "utilisateurId": 2,
+      "id": 10
+    },
+    {
+      "question": "Je commence et finis par un \"e\" et je contiens une simple lettre. Qui suis-je ?",
+      "reponse": "enveloppe",
+      "date": 1523989904704,
+      "utilisateurId": 2,
+      "id": 11
+    },
+    {
+      "question": "Marc s'habille dans sa chambre lorsque la lumière s'éteint. Dans son tiroir il a des chaussettes rouges et noires. Sa mère n'a pas rangé ses tiroirs. et donc n'a pas fait des paires avec les chaussettes. Combien Marc de chaussettes doit prendre pour avoir une paire ?",
+      "reponse": "3",
+      "date": 1523990288142,
+      "utilisateurId": 2,
+      "id": 12
+    },
+    {
+      "question": "Le 1er jour il y a 1 nénuphar dans la mare, le 2ème jour il y a 2 nénuphars et chaque jour le nombre de nénuphars double. Au bout de 50 jours la mare est remplie de nénuphars. Au bout de combien de jour le lac était-il à moitié plein ?",
+      "reponse": "49",
+      "date": 1523990399219,
+      "utilisateurId": 2,
+      "id": 13
+    },
+    {
+      "question": "Un père et un fils ont à eux deux 36 ans.\n\nSachant que le père a 30 ans de plus que le fils, quel âge a le fils ?",
+      "reponse": "3 ans",
+      "date": 1523990493730,
+      "utilisateurId": 2,
+      "id": 14
+    },
+    {
+      "question": "Quel nombre divisé par lui-même donne son double ?",
+      "reponse": "0.5",
+      "date": 1523990610838,
+      "utilisateurId": 2,
+      "id": 15
+    },
+    {
+      "question": "Un escargot est dans un puits de 10 mètres. Il monte 3 mètres chaque jour et descend 2 mètres chaque nuit. En combien de jours sera-t-il arrivé en haut ?",
+      "reponse": "8",
+      "date": 1523990906559,
+      "utilisateurId": 2,
+      "id": 16
+    },
+    {
+      "question": "Un bateau avec 15 personnes à son bord va couler d'ici vingt minutes. Il n'y a qu'un canot de sauvetage qui ne peut contenir que 5 personnes à la fois. L'eau est infestée de requins et l'île est à neuf minutes aller-retour. Combien de personnes vont être sauvées ?",
+      "reponse": "13",
+      "date": 1523991293234,
+      "utilisateurId": 2,
+      "id": 17
+    },
+    {
+      "question": "Combien y a t-il de carrés sur un tableau de 4 cases par 4 cases ?",
+      "reponse": "30",
+      "date": 1523991738330,
+      "utilisateurId": 2,
+      "id": 18
+    },
+    {
+      "question": "7 personnes se rencontrent à un carrefour. Chacun serre la main aux autres tour à tour. Sachant que chaque personne ne peut pas serrer la main 2 fois, combien y aura-t-il de poignées de main ?",
+      "reponse": "21",
+      "date": 1523991874401,
+      "utilisateurId": 2,
+      "id": 19
+    },
+    {
+      "question": "Je suis le produit de deux nombres entiers consécutifs. La somme de mes deux chiffres est 11. Qui suis je ?",
+      "reponse": "56",
+      "date": 1523992048758,
+      "utilisateurId": 2,
+      "id": 20
+    },
+    {
+      "question": "Je suis d'eau,\nje suis d'air,\net je suis d'électricité.\n\nQui suis-je ?",
+      "reponse": "courant",
+      "date": 1523992333861,
+      "utilisateurId": 2,
+      "id": 21
+    },
+    {
+      "question": "Avec les lettres de mon nom, on peut écrire celui de ma maison. Qui suis-je ?",
+      "reponse": "chien",
+      "date": 1523992426109,
+      "utilisateurId": 2,
+      "id": 22
+    },
+    {
+      "question": "J'étais demain et je serai hier.",
+      "reponse": "aujourd'hui",
+      "date": 1523992482574,
+      "utilisateurId": 2,
+      "id": 23
+    },
+    {
+      "question": "Je voyage dans le monde entier en restant dans mon coin. Qui suis-je ?",
+      "reponse": "timbre",
+      "date": 1523992567628,
+      "utilisateurId": 2,
+      "id": 24
+    },
+    {
+      "question": "Mon premier est un animal de la ferme\nMon second est une saison\nMon troisième est un animal de la forêt\n\nMon tout est une fête",
+      "reponse": "anniversaire",
+      "date": 1523992724726,
+      "utilisateurId": 2,
+      "id": 25
+    },
+    {
+      "question": "Quand j'ai deux S on peut me manger quand on en retire un, on ne le peux plus.\n\nQui suis-je ?",
+      "reponse": "poisson",
+      "date": 1523992770643,
+      "utilisateurId": 2,
+      "id": 26
+    },
+    {
+      "question": "Je peux tourner sans bouger. Qui suis je ?",
+      "reponse": "lait",
+      "date": 1523992926230,
+      "utilisateurId": 2,
+      "id": 27
+    }
+  ],
+  "utilisateurs": [
+    {
+      "id": 1,
+      "pseudo": "Amo Vlelir",
+      "mail": "amo.vlelir@yahoo.fr",
+      "password": "sha1$48b54ea1$1$ed2013f8bd37ae5f6ab75578c017fe8b7e083e45",
+      "score": 0
+    },
+    {
+      "id": 2,
+      "pseudo": "test",
+      "mail": "test",
+      "password": "sha1$739a68d1$1$427d9d9a0f0d878310ffeafc7182bbd036ec5f70",
+      "score": 0
+    }
+  ],
+  "resolutions": [
+    {
+      "utilisateurId": 1,
+      "enigmeId": 1,
+      "nombre_essais": 1,
+      "dernier_essai": "2018-03-29T19:25:43.511Z",
+      "resolu": true
+    }
+  ]
 }
