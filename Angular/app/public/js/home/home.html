@@ -1,67 +1,68 @@
+<div class="container">
+	<div class="col s12 m12 l12">
 
-<div class="col s12 m12 l12">
 
+		<div class="section">
+			<p><i class="material-icons left">trending_up</i><h5>Énigmes tendances</h5></p>
+		</div>
 
-	<div class="section">
-		<p><i class="material-icons left">trending_up</i><h5>Énigmes tendances</h5></p>
-	</div>
+		<!-- Colonne 1 -->
 
-	<!-- Colonne 1 -->
+	<!-- InfiniteScroll permet de charger automatiquement la suite des énigmes quand on scroll.
 
-<!-- InfiniteScroll permet de charger automatiquement la suite des énigmes quand on scroll.
+	infinite-scroll indique la fonction qui doit être appelée quand on arrive en bas
 
-infinite-scroll indique la fonction qui doit être appelée quand on arrive en bas
+	infinite-scroll-disabled ça permet d'indiquer un booléen qui, quand il est vrai, désactive le chargement des énigmes au scroll : dans notre cas on arrête d'essayer de charger d'autres énigmes quand on en a déjà chargé le maximum, ou quand on est déjà en train d'en chercher sur le serveur (on ne déclenche pas 2 fois tant qu'on n'a pas récupéré les autres)
 
-infinite-scroll-disabled ça permet d'indiquer un booléen qui, quand il est vrai, désactive le chargement des énigmes au scroll : dans notre cas on arrête d'essayer de charger d'autres énigmes quand on en a déjà chargé le maximum, ou quand on est déjà en train d'en chercher sur le serveur (on ne déclenche pas 2 fois tant qu'on n'a pas récupéré les autres)
-
-infinite-scroll-distance c'est à quelle distance du bas on commence à en chagrger d'autres -->
-<div class= "row" infinite-scroll="enigmes.nextPage()" infinite-scroll-disabled="enigmes.busy || enigmes.items.length == enigmes.totalCount || enigmes.error" infinite-scroll-distance="1">
-	<div class="col s12 cards-container">
-		<div ng-repeat="e in enigmes.items">
-			<carte-enigme auteur="e.utilisateur.pseudo" question="e.question" date="e.date"></carte-enigme>
+	infinite-scroll-distance c'est à quelle distance du bas on commence à en chagrger d'autres -->
+	<div class= "row" infinite-scroll="enigmes.nextPage()" infinite-scroll-disabled="enigmes.busy || enigmes.items.length == enigmes.totalCount || enigmes.error" infinite-scroll-distance="1">
+		<div class="col s12 cards-container">
+			<div ng-repeat="e in enigmes.items">
+				<carte-enigme auteur="e.utilisateur.pseudo" question="e.question" date="e.date"></carte-enigme>
+			</div>
 		</div>
 	</div>
-</div>
-<p ng-if="enigmes.busy">
-Chargement...  
-</p>
-<p ng-if="enigmes.error">Echec de la connexion au serveur.</p>
+	<p ng-if="enigmes.busy">
+	Chargement...  
+	</p>
+	<p ng-if="enigmes.error">Echec de la connexion au serveur.</p>
 
-<div ng-controller="newEnigmaController"> <!-- On rajoute un controller pour gérer l'ajout d'énigmes -->
+	<div ng-controller="newEnigmaController"> <!-- On rajoute un controller pour gérer l'ajout d'énigmes -->
 
-	<!-- Modal Trigger -->
-<!-- Grâce à angular-materialize, on peut utiliser l'attribut open pour lier l'ouverture/fermeture du modal à une variable de $scope.
-	Comme ça on peut ouvrir ou fermer le modal depuis le contrôleur en changeant la valeur de $scope.open -->
-	<a ng-if="isConnected()" data-target="modal1" id="newEnigma" class="btn-floating btn-large waves-effect waves-light red z-depth-4 modal-trigger" modal open="open" ng-click="openModal()"><i class="material-icons">add</i></a>
+		<!-- Modal Trigger -->
+	<!-- Grâce à angular-materialize, on peut utiliser l'attribut open pour lier l'ouverture/fermeture du modal à une variable de $scope.
+		Comme ça on peut ouvrir ou fermer le modal depuis le contrôleur en changeant la valeur de $scope.open -->
+		<a ng-if="isConnected()" data-target="modal1" id="newEnigma" class="btn-floating btn-large waves-effect waves-light red z-depth-4 modal-trigger" modal open="open" ng-click="openModal()"><i class="material-icons">add</i></a>
 
-	<!-- Modal Structure -->
-	<div id="modal1" class="modal">
-		<!-- Quand on valide le formulaire, ça exécute la fonction submit() du contrôleur, qui s'occupe d'ajouter l'énigme à la bdd -->
-		<form novalidate name="enigmeForm" ng-submit="enigmeForm.$valid && submit()"> 
-			<div class="modal-content">
-				<h4>Nouvelle énigme</h4>
-				<div class="row">
-					<div class="col s12">
-						<div class="row">
-							<div class="input-field col s12">
-								<!-- Champ pour entrer l'énoncé. Il est lié à $scope.question (grâce à l'attribut ng-model): mettre à jour le contrôleur met à jour le contenu de ce champ et vice versa. Comme ça on peut récupérer facilement dans le contrôleur la valeur qui a été saisie ici. -->
-								<textarea id="textarea1" class="materialize-textarea" ng-model="question" required></textarea>
-								<label for="enigme">Enoncé</label>
-							</div>
-							<div class="input-field col s6">
-								<!-- Même chose ici, la réponse est liée à $scope.reponse -->
-								<input id="first_name" type="text" class="validate" ng-model="reponse" required>
-								<label for="solution">Solution</label>
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal">
+			<!-- Quand on valide le formulaire, ça exécute la fonction submit() du contrôleur, qui s'occupe d'ajouter l'énigme à la bdd -->
+			<form novalidate name="enigmeForm" ng-submit="enigmeForm.$valid && submit()"> 
+				<div class="modal-content">
+					<h4>Nouvelle énigme</h4>
+					<div class="row">
+						<div class="col s12">
+							<div class="row">
+								<div class="input-field col s12">
+									<!-- Champ pour entrer l'énoncé. Il est lié à $scope.question (grâce à l'attribut ng-model): mettre à jour le contrôleur met à jour le contenu de ce champ et vice versa. Comme ça on peut récupérer facilement dans le contrôleur la valeur qui a été saisie ici. -->
+									<textarea id="textarea1" class="materialize-textarea" ng-model="question" required></textarea>
+									<label for="enigme">Enoncé</label>
+								</div>
+								<div class="input-field col s6">
+									<!-- Même chose ici, la réponse est liée à $scope.reponse -->
+									<input id="first_name" type="text" class="validate" ng-model="reponse" required>
+									<label for="solution">Solution</label>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<!-- Le bouton est "désactivé" tant que le formulaire n'est pas valide (càd tous les champs ne sont pas remplis). -->
-				<button type="submit" class="waves-effect waves-green btn {{enigmeForm.$invalid ? 'disabled' : ''}}"><i class="material-icons right" ng-disabled="enigmeForm.$invalid">create</i>Créer</button>
-			</div>
-		</form>
-	</div>
+				<div class="modal-footer">
+					<!-- Le bouton est "désactivé" tant que le formulaire n'est pas valide (càd tous les champs ne sont pas remplis). -->
+					<button type="submit" class="waves-effect waves-green btn {{enigmeForm.$invalid ? 'disabled' : ''}}"><i class="material-icons right" ng-disabled="enigmeForm.$invalid">create</i>Créer</button>
+				</div>
+			</form>
+		</div>
 
+	</div>
 </div>
