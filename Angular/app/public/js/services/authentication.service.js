@@ -1,8 +1,8 @@
 'use strict';
 
 angular
-    .module('app')
-    .factory('AuthenticationService', Service);
+.module('app')
+.factory('AuthenticationService', Service);
 
 function Service($http, $localStorage, jwtHelper) {
     var service = {};
@@ -17,11 +17,16 @@ function Service($http, $localStorage, jwtHelper) {
         }
 
     }
+    service.userName = function(){
+    return $localStorage.currentUser.username ; 
+}
 
+return service;
 
-    return service;
-
-
+    /*
+    Cette fonction est appelée quand on se connecte depuis le site. Elle demande à l'API un token d'utilisation,
+    et elle le stocke chez le client (dans le localStorage) ainsi que son nom d'utilisateur.P
+    */
     function Login(username, password, callback) {
         $http.post('http://localhost:3000/auth/login', {email: username, password: password})
         .then(function success(response) {

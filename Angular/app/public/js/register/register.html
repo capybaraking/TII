@@ -1,33 +1,33 @@
 <div class="container col s8">
 
 	<h1 id="inscription">Inscription</h1>
-  <form class="col s14">
+  <form class="col s14" ng-controller="registerController" ng-submit="submit()">
     
     <div class="row">
       <div class="input-field hoverable col s6">
         <i class="material-icons prefix">account_circle</i>
-        <input id="username" type="text" class="validate">
+        <input id="username" type="text" ng-model="username" class="validate">
         <label for="username">Nom d'utilisateur</label>
       </div>
       <div class="input-field hoverable col s6">
         <i class="material-icons prefix">email</i>
-        <input id="email" type="email" class="validate">
+        <input id="email" type="email" ng-model="email" class="validate">
         <label for="email">Email</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field hoverable col s6">
         <i class="material-icons prefix">vpn_key</i>
-        <input id="password" type="password" class="validate">
+        <input id="password" type="password" ng-model="password1" class="validate">
         <label for="password">Mot-de-passe</label>
       </div>
       <div class="input-field hoverable col s6">
         <i class="material-icons prefix">replay</i>
-        <input id="password2" type="password" class="validate">
+        <input id="password2" type="password" ng-model="password2" class="validate">
         <label for="password2">Retapez le mot-de-passe</label>
       </div>
     </div>
-    <a class="waves-effect waves-light btn right hoverable"><i class="large material-icons right">done</i>register</a>
+    <button type="submit" class="waves-effect waves-light btn right hoverable"><i class="large material-icons right">inscription</i>Valider</button>
   </form>
 
 </div>

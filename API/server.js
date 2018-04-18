@@ -80,6 +80,12 @@ server.post("/enigmes", function(req, res, next){
 	next(); //On a fini nos modifications, on passe à la suite
 });
 
+
+server.post('/utilisateurs', function(req, res, next){
+  //On hash le mdp
+  req.body.password = pwdHash.generate(req.body.password);
+  next();
+})
 /*
 Routes
 */
