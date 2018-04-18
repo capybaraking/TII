@@ -60,12 +60,12 @@ angular
 				var username = AuthenticationService.username() ; //Dans l'Authentitruc, faut service =~ this
 				var reqUserId = $http.get("http://localhost:3000/utilisateurs?mail="+username);
 				reqUserId.then(function success(reponse){
-					if (typeof reponse.data != "undefined" && data.length > 0) { //Mr Lefebvre dit que quand il y a un ?, la réponse est un tableau.
+					if (typeof reponse.data != "undefined" && reponse.data.length > 0) { //Mr Lefebvre dit que quand il y a un ?, la réponse est un tableau.
 						var id = reponse.data[0].id ; //On récupère l'id de l'utilisateur
 						//Maintenant on veut récupérer la résolution qui contient l'énigme et l'utilisateur
 						var reqResolution = $http.get("http://localhost:3000/resolutions?enigmeId="+id_enigme+"&utilisateurId="+id);
 						reqResolution.then(function success(reponse){
-							if (typeof reponse.data != "undefined" 	&& data.length == 1) { //Mr Lef dit qu'il pourrait y en avoir plusieurs, dans l'absolu.
+							if (typeof reponse.data != "undefined" 	&& reponse.data.length == 1) { //Mr Lef dit qu'il pourrait y en avoir plusieurs, dans l'absolu.
 								//Ca veut dire qu'il existe déjà une tentative de résolution de cette énigme pas l'utilisateur.
 								if (reponse.data[0].resolu) { //S'il a déjà résolu l'énigme (c'est un booléen, résolu)
 									maPromise.resolve("Hé t'as déjà résolu l'énigme patate");
@@ -73,7 +73,7 @@ angular
 									var ancienCompteur = reponse.data[0].nombre_essais ; //L'ancien nombre de tentatives
 									data = {nombre_essais : ancienCompteur + 1, dernier_essai: Date.now()} ; //Qqn a mal fait son boulot et n'a pas rajouté la date dans le serveur
 									var reqMAJnbEssais = $http.put("http://localhost:3000/resolutions/"+reponse.data[0].id,data)// Put c'est pour MAJ, on veut MAJ la résolution concernée
-									requeteMAJnbEssais.then(function success(reponse){
+									reqMAJnbEssais.then(function success(reponse){
 										estBonneReponse(antwort, id_enigme)
 											.then(function(juste){//c'est une promimse
 												if(juste){
@@ -95,7 +95,7 @@ angular
 										});
 								}
 
-							} else if(data.length == 0){
+							} else if(reponse.data.length == 0){
 								//S'il n'y a pas de résolution déjà crée, il faut en faire une
 								estBonneReponse(antwort, id_enigme)
 									.then(function(juste){
@@ -133,8 +133,8 @@ angular
 				if(typeof reponse.data != "undefined"){ //typeof c'est le instanceof de Java, response ça doit être un tableau
 					//Ca veut dire qu'il y a quelque chose dans l'énigme
 					var reponse = reponse.data.reponse; //On lui dit que c'est okaaaay et qu'elle doit manger l'énigme.
-					reponse = reponse.upperCase();
-					antwort = antwort.upperCase();
+					reponse = reponse.toUpperCase();
+					antwort = antwort.toUpperCase();
 					if (antwort === reponse) {
 						maPromise.resolve(true);
 					}else{

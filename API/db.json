@@ -221,11 +221,22 @@
   ],
   "resolutions": [
     {
+      "id": 1,
       "utilisateurId": 1,
       "enigmeId": 1,
       "nombre_essais": 1,
       "dernier_essai": "2018-03-29T19:25:43.511Z",
       "resolu": true
+    },
+    {
+      "nombre_essais": 2,
+      "dernier_essai": 1524087485862,
+      "id": 2
+    },
+    {
+      "nombre_essais": 2,
+      "dernier_essai": 1524087587416,
+      "id": 3
     }
   ]
 }

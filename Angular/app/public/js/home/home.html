@@ -17,18 +17,45 @@
 	<div class= "row" infinite-scroll="enigmes.nextPage()" infinite-scroll-disabled="enigmes.busy || enigmes.items.length == enigmes.totalCount || enigmes.error" infinite-scroll-distance="1">
 		<div class="col s12 cards-container">
 			<div ng-repeat="e in enigmes.items">
-				<carte-enigme auteur="e.utilisateur.pseudo" question="e.question" date="e.date"></carte-enigme>
-			</div>
-		</div>
+				<div class="enigme">
+					<div class="card vertical hoverable">
+						<div>
+							<div class="card-content">
+								<blockquote>
+									<p class="multiline">{{e.question}}</p>
+								</blockquote>
+							</div>
+							<div class="info-enigme valign-wrapper">
+								<i class="material-icons left ">tag_faces</i><span>Créateur : {{e.auteur}}</span>
+							</div>
+							<div class="info-enigme valign-wrapper">
+								<i class="material-icons left ">access_time</i><span>Postée le {{e.date | date}}</span>
+							</div>
+							<div class="card-action">
+								<a class="card-link" ng-click="repondre(e.id)" href="">Répondre à l'énigme</a> <!-- idEnigme on peut l'avoir parce qu'il est dans le scope -->
+							</div>
+						</div>
+						<div class="col m5 card-content">
+<!-- 			<div>
+	<div chips ng-model="tags">
+		
 	</div>
-	<p ng-if="enigmes.busy">
+</div> -->
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p ng-if="enigmes.busy">
 	Chargement...  
-	</p>
-	<p ng-if="enigmes.error">Echec de la connexion au serveur.</p>
+</p>
+<p ng-if="enigmes.error">Echec de la connexion au serveur.</p>
 
-	<div ng-controller="newEnigmaController"> <!-- On rajoute un controller pour gérer l'ajout d'énigmes -->
+<div ng-controller="newEnigmaController"> <!-- On rajoute un controller pour gérer l'ajout d'énigmes -->
 
-		<!-- Modal Trigger -->
+	<!-- Modal Trigger -->
 	<!-- Grâce à angular-materialize, on peut utiliser l'attribut open pour lier l'ouverture/fermeture du modal à une variable de $scope.
 		Comme ça on peut ouvrir ou fermer le modal depuis le contrôleur en changeant la valeur de $scope.open -->
 		<a ng-if="isConnected()" data-target="modal1" id="newEnigma" class="btn-floating btn-large waves-effect waves-light purple lighten-2 z-depth-4 modal-trigger tooltipped" data-position="top" data-tooltip="Ajouter une énigme" modal open="open" ng-click="openModal()"><i class="material-icons">add</i></a>
@@ -63,5 +90,39 @@
 			</form>
 		</div>
 
+
+
+	</div>
+
+
+
+
+	<!-- Pour faire une fenster modale, il faut forcément un """trigger""" (un déclencheur), normalement c'est un bouton/lien (c'est pareil) sur lequel on clique. Là on ne met rien dedans pour ne pas qu'on le voie à l'écran comme on n'en a pas besoin. -->
+	<a data-target="modalReponse" modal open="ouvertureReponse" href=""></a> <!-- Y a pas de href car c'est un "faux" lien. C'est juste un moyen de définir les propriétés de la fenêtre modale, data truc c'est l'id de la modale en question, modal faut dire que c'est modal lol, et open c'est le booléen qui dit si la fenêtre doit être affichée ou cachée. On peut changer la valeur de ce booléen depuis le controller pour ouvrir et fermer la fenêtre en fonction de la fluctuation de nos désirs intimes -->
+
+	<!-- Là, c'est la fenêtre modale pour répondre à l'énigme. -->
+	<div id="modalReponse" class="modal">
+		<!-- Quand on valide le formulaire, ça exécute la fonction submit() du contrôleur, qui s'occupe d'ajouter l'énigme à la bdd -->
+		<form novalidate name="reponseForm" ng-submit="reponseForm.$valid && envoyerReponse()"> 
+			<div class="modal-content">
+				<h4>Répondre à l'énigme</h4>
+				<div class="row">
+					<div class="col s12">
+						<div class="row">
+							<div class="input-field col s12">
+								<!-- Champ pour entrer la réponse. Il est lié à $scope.question (grâce à l'attribut ng-model): mettre à jour le contrôleur met à jour le contenu de ce champ et vice versa. Comme ça on peut récupérer facilement dans le contrôleur la valeur qui a été saisie ici. -->
+								<input id="reponseEnigme" type="text" class="validate" ng-model="reponse" required>
+								<!-- La réponse va bien dans scope.reponse. -->
+								<label for="reponseEnigme">Votre réponse</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<!-- Le bouton est "désactivé" tant que le formulaire n'est pas valide (càd tous les champs ne sont pas remplis). -->
+				<button type="submit" class="waves-effect waves-green btn {{reponseForm.$invalid ? 'disabled' : ''}}"><i class="material-icons right" ng-disabled="reponseForm.$invalid">create</i>Répondre</button>
+			</div>
+		</form>
 	</div>
 </div>

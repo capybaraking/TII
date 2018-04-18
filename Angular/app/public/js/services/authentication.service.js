@@ -17,7 +17,7 @@ function Service($http, $localStorage, jwtHelper) {
         }
 
     }
-    service.userName = function(){
+    service.username = function(){
     return $localStorage.currentUser.username ; 
 }
 
