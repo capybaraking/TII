@@ -71,7 +71,7 @@ angular
 									maPromise.resolve("Hé t'as déjà résolu l'énigme patate");
 								} else { //Donc s'il l'a pas déjà résolue, il faut incrémenter le compteur de tentatives
 									var ancienCompteur = reponse.data[0].nombre_essais ; //L'ancien nombre de tentatives
-									data = {nombre_essais : ancienCompteur + 1, dernier_essai = Date.now()} ; //Qqn a mal fait son boulot et n'a pas rajouté la date dans le serveur
+									data = {nombre_essais : ancienCompteur + 1, dernier_essai: Date.now()} ; //Qqn a mal fait son boulot et n'a pas rajouté la date dans le serveur
 									var reqMAJnbEssais = $http.put("http://localhost:3000/resolutions/"+reponse.data[0].id,data)// Put c'est pour MAJ, on veut MAJ la résolution concernée
 									requeteMAJnbEssais.then(function success(reponse){
 										estBonneReponse(antwort, id_enigme)
