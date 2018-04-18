@@ -1,15 +1,17 @@
 <div class="enigme">
-	<div class="card vertical">
+	<div class="card vertical hoverable">
 		<div>
 			<div class="card-content">
+				<blockquote>
 				<p>{{question}}</p>
+				</blockquote>
 			</div>
-			<div class="chips">
-				<i class="close material-icons left">tag_faces</i>{{auteur}}
-		    </div>
-		    <div class="date">
-				Postée le {{date | date}}
-		    </div>
+			<div class="date valign-wrapper">
+				<i class="material-icons left ">tag_faces</i><span>Créateur : {{auteur}}</span>
+			</div>
+			<div class="date valign-wrapper">
+				<i class="material-icons left ">access_time</i><span>Postée le {{date | date}}</span>
+			</div>
 			<div class="card-action">
 				<a href="#">Répondre à l'énigme</a>
 			</div>
