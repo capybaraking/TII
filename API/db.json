@@ -237,6 +237,22 @@
       "nombre_essais": 2,
       "dernier_essai": 1524087587416,
       "id": 3
+    },
+    {
+      "utilisateurId": 2,
+      "enigmeId": 15,
+      "nombre_essais": 1,
+      "dernier_essai": 1524087828078,
+      "resolu": true,
+      "id": 4
+    },
+    {
+      "utilisateurId": 2,
+      "enigmeId": 27,
+      "nombre_essais": 1,
+      "dernier_essai": 1524087974742,
+      "resolu": true,
+      "id": 5
     }
   ]
 }

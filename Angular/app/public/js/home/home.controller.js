@@ -38,10 +38,14 @@ angular.module('home')
     $scope.envoyerReponse = function() {
         enigmes.repondre(idEnigmeRepondue, $scope.reponse).then(function success(reponse){
             $log.info(reponse);
+            $scope.ouvertureReponse = false ;
+            $scope.reponse = "";
+
             console.log("alors :"+reponse);
         }, function echec(err){
             $log.warn(err);
             console.log('erreur : '+err)
+            $scope.reponse ="";
         }) ; //On peut prendre la réponse car on l'a mise dans le scope.
     }
     $scope.ouvertureReponse = false ; //Par défaut, la modale, bah elle s'ouvre pas.
