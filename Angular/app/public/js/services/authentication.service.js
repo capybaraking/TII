@@ -28,7 +28,7 @@ return service;
     et elle le stocke chez le client (dans le localStorage) ainsi que son nom d'utilisateur.P
     */
     function Login(username, password, callback) {
-        $http.post('http://localhost:3000/auth/login', {email: username, password: password})
+        $http.post('http://localhost:3000/auth/login', {pseudo: username, password: password})
         .then(function success(response) {
             // login successful if there's a token in the response
             if (response.data.access_token) {

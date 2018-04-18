@@ -33,8 +33,8 @@ function verifyToken(token){
 }
 
 // Check if the user exists in database
-function isAuthenticated({email, password}){
-	return userdb.utilisateurs.findIndex(user => user.mail === email && pwdHash.verify(password, user.password)) !== -1
+function isAuthenticated({pseudo, password}){
+	return userdb.utilisateurs.findIndex(user => user.pseudo === pseudo && pwdHash.verify(password, user.password)) !== -1
 }
 
 /*
@@ -60,10 +60,10 @@ server.post("/enigmes", function(req, res, next){
 	try { //On regarde si la personne est connectée. Si ce n'est pas le cas ça va faire une erreur
     token = req.headers.authorization.split(' ')[1]; //On récupère le token d'autentification dans la requête
 		payload = jwt.verify(token, SECRET_KEY); //C'est ce qui est contenu dans le token : l'email et le mdp
-		email = payload.email;
+		pseudo = payload.pseudo;
 		password = payload.password;
 		//On cherche dans la bdd l'index de l'utilisateur qui a cet email et mdp
-		index = userdb.utilisateurs.findIndex(user => user.mail === email && pwdHash.verify(password, user.password));
+		index = userdb.utilisateurs.findIndex(user => user.pseudo === pseudo && pwdHash.verify(password, user.password));
 		if(index === -1){ //S'il vaut -1 c'est qu'on ne l'a pas trouvé : l'utilisateur n'existe pas.
 			const status = 401
 			const message = "Erreur : l'utilisateur n'existe pas";
@@ -99,15 +99,15 @@ Routes
 // L'entrée pour se connecter
 server.post('/auth/login', (req, res) => {
   //const {email, password} = req.body
-  const email= req.body.email;
+  const pseudo= req.body.pseudo;
   const password = req.body.password;
-  if (isAuthenticated({email, password}) === false) {
+  if (isAuthenticated({pseudo, password}) === false) {
   	const status = 401
   	const message = 'Incorrect email or password'
   	res.status(status).json({status, message})
   	return
   }
-  const access_token = createToken({email, password})
+  const access_token = createToken({pseudo, password})
   res.status(200).json({access_token})
 });
 
