@@ -58,7 +58,7 @@ angular
 			if(AuthenticationService.isConnected()) {
 				//On veut déjà récupérer l'id de l'utilisateur.
 				var username = AuthenticationService.username() ; //Dans l'Authentitruc, faut service =~ this
-				var reqUserId = $http.get("http://localhost:3000/utilisateurs?mail="+username);
+				var reqUserId = $http.get("http://localhost:3000/utilisateurs?pseudo="+username);
 				reqUserId.then(function success(reponse){
 					if (typeof reponse.data != "undefined" && reponse.data.length > 0) { //Mr Lefebvre dit que quand il y a un ?, la réponse est un tableau.
 						var id = reponse.data[0].id ; //On récupère l'id de l'utilisateur
