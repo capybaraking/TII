@@ -6,7 +6,7 @@ angular
 		this.createAccount = function(username,mail,mdp){ //C'est pour créer une nouvelle énigme.
 			var maPromise = $q.defer() ;
 			if (username.length>4){
-				var data = {pseudo: username, mail: mail,password:mdp}; //La date et l'id_utilisateur seront faits sur le serveur
+				var data = {pseudo: username, mail: mail,password:mdp,score:0}; //La date et l'id_utilisateur seront faits sur le serveur
 				var requete = $http.post("http://localhost:3000/utilisateurs", data);
 				requete.then(function success(reponse){
 					maPromise.resolve(reponse.data);
