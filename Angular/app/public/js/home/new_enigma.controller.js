@@ -33,6 +33,7 @@ angular.module('home')
 		enigmes.creation($scope.question, $scope.reponse).then(function(){
 			$scope.succes = true;
 			console.log("Enigme ajoutée");
+			Materialize.toast('Enigme ajoutée', 2000, 'rounded');
 			$scope.reset();
 		}).catch(function(erreur){
 			$scope.erreur = erreur;

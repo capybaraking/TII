@@ -5,9 +5,8 @@
 		<div class="section">
 			<p><i class="material-icons left">whatshot</i><h5>Dernières énigmes</h5></p>
 		</div>
-
-		<!-- Colonne 1 -->
-
+		
+		
 	<!-- InfiniteScroll permet de charger automatiquement la suite des énigmes quand on scroll.
 
 	infinite-scroll indique la fonction qui doit être appelée quand on arrive en bas
@@ -32,7 +31,7 @@
 		<!-- Modal Trigger -->
 	<!-- Grâce à angular-materialize, on peut utiliser l'attribut open pour lier l'ouverture/fermeture du modal à une variable de $scope.
 		Comme ça on peut ouvrir ou fermer le modal depuis le contrôleur en changeant la valeur de $scope.open -->
-		<a ng-if="isConnected()" data-target="modal1" id="newEnigma" class="btn-floating btn-large waves-effect waves-light purple lighten-2 z-depth-4 modal-trigger" modal open="open" ng-click="openModal()"><i class="material-icons">add</i></a>
+		<a ng-if="isConnected()" data-target="modal1" id="newEnigma" class="btn-floating btn-large waves-effect waves-light purple lighten-2 z-depth-4 modal-trigger tooltipped" data-position="top" data-tooltip="Ajouter une énigme" modal open="open" ng-click="openModal()"><i class="material-icons">add</i></a>
 
 		<!-- Modal Structure -->
 		<div id="modal1" class="modal">
