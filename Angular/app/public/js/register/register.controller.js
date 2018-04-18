@@ -9,19 +9,20 @@ angular.module('app')
     $scope.succes = false;
     $scope.erreur = ''; 
 
-    var password = document.getElementById("password"), password2 = document.getElementById("password2");
 
     function validatePassword(){
-      if(password.value == password2.value) {
-        password2.setCustomValidity('');
+      if( $scope.password == $scope.password2) {
+        $scope.password2.setCustomValidity('');
       } else {
-        password2.setCustomValidity("Les mots-de-passe que vous avez saisi ne sont pas sont identiques !");
+        $scope.password2.setCustomValidity("Les mots-de-passe que vous avez saisi ne sont pas sont identiques !");
         
       }
+
+
+        $scope.password.onchange = validatePassword;
+        $scope.password2.onchange = validatePassword;
     }
 
-    password.onchange = validatePassword;
-    password2.onkeydown = validatePassword;
 
     $scope.reset = function(){
         $scope.username = ""; 

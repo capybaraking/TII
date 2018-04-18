@@ -204,6 +204,19 @@
       "mail": "test",
       "password": "sha1$739a68d1$1$427d9d9a0f0d878310ffeafc7182bbd036ec5f70",
       "score": 0
+    },
+    {
+      "pseudo": "France Duval",
+      "mail": "france.duval@gmail.com",
+      "password": "sha1$b073ff6a$1$53cc3484e6d0fbd86e0962088fcaf230621d52aa",
+      "id": 3
+    },
+    {
+      "pseudo": "France",
+      "mail": "olo@gmail.com",
+      "password": "sha1$40eca607$1$fc51c7b23dfb28bf2b475b5ae999f0fd3757dd0f",
+      "score": 0,
+      "id": 4
     }
   ],
   "resolutions": [
