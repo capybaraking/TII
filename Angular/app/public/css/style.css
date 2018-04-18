@@ -26,9 +26,7 @@ main {
 	width: 100%;
 }
 
-nav{
-	background-color : var(--main-color);
-}
+
 
 .logo{
 	margin-left : 20px;
@@ -148,7 +146,7 @@ i.profile-icon {
   line-height: 25px;
 }
 
-.date{
+.info-enigme{
 	font-size: 12px;
 	margin-bottom : 20px;
 	margin-left : 30px;
@@ -157,11 +155,22 @@ i.profile-icon {
 
 /****INSCRIPTION***/
 
-#inscription{
-	margin-bottom: 100px;
-}
 #newEnigma{
 	position : fixed;
 	bottom : 70px;
 	right : 50px;
+}
+
+.card-action{
+	color : green;
+	background-color : pink;
+}
+
+blockquote{
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left: 5px solid #ba68c8 ; /* purple lighten-2 */
+}
+.help{
+	color : #6a1b9a !important; /* purple darken-3 */
 }
