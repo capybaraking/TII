@@ -3,9 +3,6 @@
     src: url(/fonts/Muli/Muli-Regular.ttf);
 }
 
-:root {
-	--main-color:#cd4b4b;
-}
 
 body {
 	display: flex;
@@ -20,7 +17,6 @@ main {
 }
 
 .page-footer{
-	background-color : var(--main-color);
 	/*position: fixed;*/
 	bottom: 0;
 	width: 100%;
@@ -66,59 +62,36 @@ main {
 		column-count: 2;
 	}
 }
-/* @media only screen and (min-width: 993px) {
+/@media only screen and (min-width: 993px) {
   .cards-container {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
   }
-} */
+} 
 
 
 /*******Profil*********/
-/*
-.sidenav {
-	/*width: 280px; /* Set the width of the sidebar 
-	height: 100%;
-	position: fixed; /* Fixed Sidebar (stay in place on scroll) 
-	top: 0; /* Stay at the top 
-	left: 0;
-	background-color: var(--main-color); 
-	overflow-x: hidden; /* Disable horizontal scroll 
-}
-
-/* The navigation menu links */
 
 .sidebar{
 	width : 100%;
-	border : 2px solid navy;
-	background : orange;
 }
 
-
-.xxx{
-	border : 2px solid lightgreen;
-}
-
+/* The navigation menu links */
 .sidebar a {
 	padding : 20px;
 	text-decoration: none;
 	font-size: 17px;
 	color: #FFFFFF;
 	display: block;
-	background-color : #ba68c8;
+	background-color : #6a1b9a;
 	width : 100%;
-	
-	border : 2px solid yellow;
 }
-
 
 .sidebar a:hover {
-	color: var(--main-color);
+	color: white;
 	background-color: #ba68c8;
 }
-
-
 
 i.profile-icon {
     color: #ba68c8;
@@ -126,45 +99,19 @@ i.profile-icon {
 	font-size : 10rem;
 }
 
-
 #name{
 	text-shadow: 2px 0px 9px #777;
 	padding-top: 20px;
 	font-size: 24px;
 }
 
+
+
 /****INDEX****/
-
-.chips {
-  background: #e0e0e0;
-  margin-left: 10px;
-  margin-bottom: 5px;
-  padding : 10px;
-  border-radius: 32px;
-  font-size: 12px;
-  max-width: 300px;
-  word-wrap: break-word;
-  line-height: 25px;
-}
-
 .info-enigme{
 	font-size: 12px;
 	margin-bottom : 20px;
 	margin-left : 30px;
-}
-
-
-/****INSCRIPTION***/
-
-#newEnigma{
-	position : fixed;
-	bottom : 70px;
-	right : 50px;
-}
-
-.card-action{
-	color : green;
-	background-color : pink;
 }
 
 blockquote{
@@ -172,6 +119,22 @@ blockquote{
   padding-left: 1.5rem;
   border-left: 5px solid #ba68c8 ; /* purple lighten-2 */
 }
+
 .card-link{
 	color : #6a1b9a !important; /* purple darken-3 */
 }
+
+#newEnigma{ /* bouton rond */
+	position : fixed;
+	bottom : 70px;
+	right : 50px;
+}
+
+
+/****INSCRIPTION***/
+
+.card-action{
+	color : green;
+	background-color : pink;
+}
+
