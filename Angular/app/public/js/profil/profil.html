@@ -1,26 +1,23 @@
-<div class="sidenav">
-	<div>
-        <div id="user-profile">
-            <div id="name">
-            USERNAME {{USERNAME}}
-        </div>
-        </div>
-        
-        <div>
-            <img class="circle" src="../images/user.png">
-        </div>
-        
-    </div>
-    <!-- Pour aller dans un sous état, il suffit de faire ui-sref=".sousEtat". Comme ça ça remplit le ui-view plus bas avec la bonne vue. -->
-    <a ui-sref=".informations">Informations</a> 
-    <a ui-sref=".enigma">Mes énigmes</a>
-    <a ui-sref=".resolues">Enigmes résolues</a>
-    <a ui-sref=".non_resolues">Enigmes non-résolues</a>
-    <a ui-sref=".suivies">Enigmes suivies</a>
-    <a ui-sref=".achievements">Achievements</a>
-</div>
+<div class="row">
+	<div class="sidebar col m4 l3">
+		
+		<div class="xxx center-align">			
+			<div id="name">
+				USERNAME {{USERNAME}}
+			</div>			
+			<i class="material-icons profile-icon">account_circle</i>			
+		</div>
+		
+		<!-- Pour aller dans un sous état, il suffit de faire ui-sref=".sousEtat". Comme ça ça remplit le ui-view plus bas avec la bonne vue. -->
+		<a ui-sref=".informations">Informations</a> 
+		<a ui-sref=".enigma">Mes énigmes</a>
+		<a ui-sref=".resolues">Enigmes résolues</a>
+		<a ui-sref=".non_resolues">Enigmes non-résolues</a>
+		<a ui-sref=".suivies">Enigmes suivies</a>
+		<a ui-sref=".achievements">Achievements</a>
+	</div>
 
-<main id="main-profil">
-    <div ui-view></div>
-    
-</main>
+	<div class="col m8 l9">
+		<div ui-view></div>  
+	</div>
+</div>
